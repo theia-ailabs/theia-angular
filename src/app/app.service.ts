@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import * as dotenv from "dotenv";
+dotenv.config();
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AppService {
+
+  rootUrl = 'https://2bfe-212-31-49-235.eu.ngrok.io/' + 'welcome';
 
   constructor(private http: HttpClient) { }
 
-  getData(url: string): Observable<any> {
-    return this.http.get(url);
+  getData(): Observable<any> {
+    return this.http.get(this.rootUrl);
   }
-
 }

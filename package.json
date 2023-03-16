@@ -25,6 +25,7 @@
     "@fullcalendar/interaction": "^6.1.4",
     "@fullcalendar/list": "^6.1.4",
     "@fullcalendar/timegrid": "^6.1.4",
+    "dotenv": "^16.0.3",
     "primeicons": "^6.0.1",
     "primeng": "^15.2.0",
     "rxjs": "~7.8.0",

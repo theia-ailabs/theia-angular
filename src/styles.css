@@ -121,7 +121,7 @@ ul li a p:hover {
 }
 
 .content2 {
-    background-color: var(--dark-color2);
+    background: rgba(31, 41, 55, 0.5);
     border-color: var(--primary-color);
     position: relative;
     z-index: 1;
@@ -266,6 +266,10 @@ app-loader {
     font-size: 30px;
 }
 
+#myFooter {
+    background: rgba(31, 41, 55, 0.8) !important;
+    border-top: 1px double white;
+}
 
 .canvas-container {
     height: 100vh;

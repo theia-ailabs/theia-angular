@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
@@ -7,5 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoaderComponent {
-
 }
+
+
+
+
+

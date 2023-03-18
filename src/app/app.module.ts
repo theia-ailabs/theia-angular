@@ -20,6 +20,7 @@ import { BrowserPlatformLocation } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { RouterOutlet } from '@angular/router';
+import { BackgroundCanvasComponent } from './components/background-canvas/background-canvas.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { RouterOutlet } from '@angular/router';
     EmailsComponent,
     HomeComponent,
     LoaderComponent,
+    BackgroundCanvasComponent,
   ],
   imports: [
     BrowserModule,

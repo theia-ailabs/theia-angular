@@ -275,3 +275,8 @@ app-loader {
     background: transparent;
     color: #335B7F;
 }
+
+canvas {
+    position: absolute;
+    z-index: -99 !important;
+}

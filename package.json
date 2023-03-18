@@ -25,19 +25,20 @@
     "@fullcalendar/interaction": "^6.1.4",
     "@fullcalendar/list": "^6.1.4",
     "@fullcalendar/timegrid": "^6.1.4",
-    "@types/three": "^0.149.0",
     "dotenv": "^16.0.3",
     "primeicons": "^6.0.1",
     "primeng": "^15.2.0",
     "rxjs": "~7.8.0",
     "three": "^0.150.1",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zone": "^0.3.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.1",
     "@angular/cli": "~15.2.1",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "@types/three": "^0.149.0",
     "autoprefixer": "^10.4.13",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

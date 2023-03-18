@@ -278,5 +278,13 @@ app-loader {
 
 canvas {
     position: absolute;
-    z-index: -99 !important;
+    z-index: -99;
+}
+
+.canvas-container {
+    position: absolute;
+    z-index: 999 !important;
+    height: 100vh;
+    width: 100vw;
+    background: #000055;
 }

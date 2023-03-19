@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import * as THREE from 'three';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Component, OnInit } from '@angular/core';
+
+declare var particlesJS: any;
+
 
 @Component({
   selector: 'app-loader',
@@ -11,6 +9,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   styleUrls: ['./loader.component.css']
 })
 
-export class LoaderComponent {
+export class LoaderComponent implements OnInit {
+  public ngOnInit(): void {
+    this.invokeParticles();
+  }
 
+  public invokeParticles(): void {
+    particlesJS.load('particles-js', 'assets/particles.json', function () { });
+  }
 }

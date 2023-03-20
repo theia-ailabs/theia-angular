@@ -16,6 +16,7 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* ---- particles.js container ---- */
 .loader-group {
     position: relative;
@@ -39,7 +40,7 @@ html {
     margin-right: -0.25em;
 }
 
-.content {
+.content-box {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: middle;

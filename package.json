@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "git rm -r dist && git add . && git commit -m 'rmv dist production' && git push origin production && npm i && npm run build && git add dist && git commit -m 'add dist' && git subtree push --prefix dist origin production && rm -r dist"
+    "deploy": "git rm -r dist && git commit -m 'rmv dist production' && git push origin production && npm i && npm run build && git add dist && git commit -m 'add dist' && git subtree push --prefix dist origin production && rm -r dist"
   },
   "private": true,
   "dependencies": {

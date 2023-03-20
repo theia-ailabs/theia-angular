@@ -14,7 +14,7 @@
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": "#ffffff"
       },
       "polygon": {
         "nb_sides": 5
@@ -26,17 +26,17 @@
       }
     },
     "opacity": {
-      "value": 0.5,
-      "random": false,
+      "value": 0.9,
+      "random": true,
       "anim": {
-        "enable": false,
+        "enable": true,
         "speed": 1,
         "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
-      "value": 5,
+      "value": 6,
       "random": true,
       "anim": {
         "enable": true,
@@ -48,13 +48,13 @@
     "line_linked": {
       "enable": true,
       "distance": 300,
-      "color": "#e95302",
-      "opacity": 0.4,
+      "color": "#f7730f",
+      "opacity": 0.6,
       "width": 2
     },
     "move": {
       "enable": true,
-      "speed": 12,
+      "speed": 10,
       "direction": "none",
       "random": true,
       "straight": false,

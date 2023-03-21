@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { RouterOutlet } from '@angular/router';
 import { BackgroundCanvasComponent } from './components/background-canvas/background-canvas.component';
+import { TextLoaderComponent } from './components/text-loader/text-loader.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { BackgroundCanvasComponent } from './components/background-canvas/backgr
     HomeComponent,
     LoaderComponent,
     BackgroundCanvasComponent,
+    TextLoaderComponent,
   ],
   imports: [
     BrowserModule,

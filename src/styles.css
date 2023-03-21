@@ -133,12 +133,6 @@ h1.span {
     z-index: 4;
 }
 
-span:hover {
-    color: #ff0266;
-    font-weight: 500;
-    font-size: 2.2rem;
-}
-
 @media (min-width: 800px) {
 
     .nav h1 {

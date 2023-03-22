@@ -8,10 +8,16 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
   styleUrls: ['./background-canvas.component.css']
 })
 export class BackgroundCanvasComponent implements OnInit {
+
+  timeoutId: any;
+
   constructor() { }
 
   ngOnInit(): void {
     console.clear();
+    this.startTimer();
+    window.addEventListener('mousemove', this.resetTimer.bind(this));
+    window.addEventListener('keypress', this.resetTimer.bind(this));
     const onBeforeCompile = (shader: any) => {
       shader.uniforms.time = gu.time;
       shader.vertexShader = `
@@ -136,5 +142,30 @@ export class BackgroundCanvasComponent implements OnInit {
       renderer.render(scene, camera);
     });
 
+  }
+
+  startTimer() {
+    this.timeoutId = setTimeout(this.showSleepScreen.bind(this), 5000);
+  }
+
+  resetTimer() {
+    clearTimeout(this.timeoutId);
+    this.hideSleepScreen();
+    this.startTimer();
+  }
+
+  showSleepScreen() {
+    this.hidePageContent();
+    // Mostrar la pantalla de "sleep"
+  }
+
+  hideSleepScreen() {
+    document.getElementById("word").style.zIndex = "-1";
+    // Ocultar la pantalla de "sleep"
+  }
+
+  hidePageContent() {
+    document.getElementById("word").style.zIndex = "1000";
+    // Ocultar el contenido de la página
   }
 }

@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm i && npm run build && git add dist && git commit -m \"add dist\" && git push --branch production",
+    "deploy": "npm install && npm run build && git add dist && git commit -m \"add dist\" && git push --branch production",
     "__remove__": "git checkout main && git push origin --delete production"
   },
   "private": true,

@@ -16,6 +16,7 @@
 
 a {
     color: #fff;
+    opacity: 1 !important;
     position: relative;
     text-decoration: none;
 }
@@ -99,7 +100,7 @@ a span {
     z-index: 4001;
     box-shadow: inset 0px 0px 1px 1px rgba(64, 64, 64, 0.1);
     background: -webkit-radial-gradient(center, #00c351 0%, rgba(64, 64, 64, 0) 50%);
-    background: radial-gradient(ellipse at center, #f7730f 0%, rgba(64, 64, 64, 0) 30%);
+    background: radial-gradient(ellipse at center, #6432FF 0%, rgba(64, 64, 64, 0) 30%);
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
@@ -131,7 +132,7 @@ a span {
     right: 0;
     width: 100%;
     min-width: 2000px;
-    height: 130px;
+    height: 190px;
     min-height: 51px;
     z-index: 4100;
     background-color: transparent;

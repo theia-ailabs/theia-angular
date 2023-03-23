@@ -80,7 +80,7 @@ html {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5);
+    box-shadow: inset 0 0 0 1px rgba(100, 50, 255, .5);
 }
 
 #particles-js {
@@ -110,7 +110,7 @@ html {
 
 .nav h1 {
     font-family: "Cubic", sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
     padding-bottom: 0.5rem;
     letter-spacing: 0.5rem;
@@ -538,8 +538,18 @@ app-loader {
 
 .canvas-container {
     position: absolute;
-    z-index: 999 !important;
+    top: 0;
+    left: 0;
+    z-index: 9999 !important;
     height: 100vh;
     width: 100vw;
-    background: #000055;
+    background: transparent;
+}
+
+#svg {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }

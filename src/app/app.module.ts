@@ -22,7 +22,9 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { RouterOutlet } from '@angular/router';
 import { BackgroundCanvasComponent } from './components/background-canvas/background-canvas.component';
 import { TextLoaderComponent } from './components/text-loader/text-loader.component';
+import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
 
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { TextLoaderComponent } from './components/text-loader/text-loader.compon
     LoaderComponent,
     BackgroundCanvasComponent,
     TextLoaderComponent,
+    SvgIaComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { TextLoaderComponent } from './components/text-loader/text-loader.compon
       useValue: {
         autoLogin: false,
         providers: [
+          AppService,
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(

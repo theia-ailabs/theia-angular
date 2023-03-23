@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as dotenv from "dotenv";
-dotenv.config();
+
 
 @Injectable({
   providedIn: 'root'

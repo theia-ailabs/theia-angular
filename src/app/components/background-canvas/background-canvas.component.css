@@ -1,0 +1,7 @@
+#nav-bar {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#main-display {
+    transition: opacity 0.5s ease-in-out;
+}

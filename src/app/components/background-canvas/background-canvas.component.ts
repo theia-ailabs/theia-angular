@@ -15,6 +15,7 @@ export class BackgroundCanvasComponent implements OnInit {
 
   ngOnInit(): void {
     console.clear();
+    //Empieza a contar
     this.startTimer();
     window.addEventListener('mousemove', this.resetTimer.bind(this));
     window.addEventListener('keypress', this.resetTimer.bind(this));
@@ -160,12 +161,14 @@ export class BackgroundCanvasComponent implements OnInit {
   }
 
   hideSleepScreen() {
-    document.getElementById("word").style.zIndex = "-1";
+    document.getElementById("nav-bar").style.opacity = '1';
+    document.getElementById("main-display").style.opacity = '1';
     // Ocultar la pantalla de "sleep"
   }
 
   hidePageContent() {
-    document.getElementById("word").style.zIndex = "1000";
+    document.getElementById("nav-bar").style.opacity = '0';
+    document.getElementById("main-display").style.opacity = '0';
     // Ocultar el contenido de la página
   }
 }

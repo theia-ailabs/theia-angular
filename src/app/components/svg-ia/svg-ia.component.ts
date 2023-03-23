@@ -54,14 +54,14 @@ export class SvgIaComponent implements OnInit {
 
     function initLights() {
       const point = new THREE.PointLight(0xffffff, 1, 0);
-      point.position.set(20, 100, 255);
+      point.position.set(20, 255, 255);
       SCENE.add(point);
     }
 
 
     function initCamera() {
       CAMERA = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-      CAMERA.position.y = 50;
+      CAMERA.position.y = 100;
       CAMERA.position.z = 100;
     }
 
@@ -142,7 +142,7 @@ export class SvgIaComponent implements OnInit {
 
 
     function createObjects() {
-      const geometry = new THREE.SphereGeometry(28, 100, 10);
+      const geometry = new THREE.SphereGeometry(25, 255, 255);
 
       const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
@@ -184,7 +184,7 @@ export class SvgIaComponent implements OnInit {
                 if (sin(vUv.x * 1000.0) <= 0.0001 && sin(vUv.y * 1000.0) <= 0.0001) {
                     gl_FragColor = vec4(vec3(0.0), 0.0);
                 } else {
-                    gl_FragColor = vec4(0.5, 0.5, 1.0, 1.0);
+                    gl_FragColor = vec4(194.0/255.0, 0.0, 255.0/255.0, 1.0);
                 }
             }
           }

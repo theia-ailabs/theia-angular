@@ -62,7 +62,7 @@ export class SvgIaComponent implements OnInit {
     function initCamera() {
       CAMERA = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
       CAMERA.position.y = 100;
-      CAMERA.position.z = 100;
+      CAMERA.position.z = 200;
     }
 
 
@@ -72,7 +72,7 @@ export class SvgIaComponent implements OnInit {
       RENDERER.setSize(window.innerWidth, window.innerHeight);
       RENDERER.shadowMap.enabled = true;
       RENDERER.shadowMapSort = true;
-      RENDERER.setClearColor(0x000055, 0.3);
+      RENDERER.setClearColor(0x000055, 0);
     }
 
 

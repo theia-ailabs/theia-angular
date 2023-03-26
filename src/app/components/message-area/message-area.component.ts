@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AppService } from 'src/app/app.service';
 
 interface Message {
   author: string;
@@ -18,10 +17,12 @@ export class MessageAreaComponent {
 
   userMessage: string;
   messages: Message[];
+  serverMessages: Message[]; // mensajes recibidos del servidor
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.messages = [];
     this.userMessage = "";
+    this.serverMessages = [];
   }
 
   addMessage(): void {

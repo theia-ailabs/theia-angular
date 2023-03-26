@@ -14,7 +14,6 @@ export class BackgroundCanvasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.clear();
     //Empieza a contar
     this.startTimer();
     window.addEventListener('mousemove', this.resetTimer.bind(this));

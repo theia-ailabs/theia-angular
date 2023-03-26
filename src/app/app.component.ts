@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +11,15 @@ export class AppComponent implements OnInit {
 
   constructor() { }
 
+  @Output() updateSphereGeometry = new EventEmitter();
+
+  onAudioPlay() {
+    this.updateSphereGeometry.emit();
+  }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.loading = false;
-    }, 30000);
+    }, 3000);
   }
 }

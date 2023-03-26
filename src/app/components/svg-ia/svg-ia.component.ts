@@ -142,7 +142,7 @@ export class SvgIaComponent implements OnInit {
 
 
     function createObjects() {
-      const geometry = new THREE.SphereGeometry(25, 255, 255);
+      let geometry = new THREE.SphereGeometry(25, 64, 64);
 
       const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
@@ -193,6 +193,23 @@ export class SvgIaComponent implements OnInit {
       const sphere = new THREE.Mesh(geometry, shaderMaterial);
 
       SCENE.add(sphere);
+
+      // Event listener para detectar cuando el audio está activo
+      const audioListener = new THREE.AudioListener();
+      const audio = new THREE.Audio(audioListener);
+      audio.setMediaElementSource(document.querySelector('audio'));
+      audio.play();
+      audio.setLoop(true);
+      audio.setVolume(0.5);
+      audio.onEnded = () => {
+        audio.play();
+      }
+      audio.addEventListener = () => {
+        // Cambiar la geometría de la esfera cuando el audio está activo
+        geometry = new THREE.SphereGeometry(50, 128, 128);
+        sphere.geometry.dispose();
+        sphere.geometry = geometry;
+      }
     }
   }
 }

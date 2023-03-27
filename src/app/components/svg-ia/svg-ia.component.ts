@@ -82,8 +82,8 @@ export class SvgIaComponent implements OnInit {
 
     function initCamera() {
       CAMERA = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-      CAMERA.position.y = 100;
-      CAMERA.position.z = 100;
+      CAMERA.position.y = 150;
+      CAMERA.position.z = 150;
     }
 
 

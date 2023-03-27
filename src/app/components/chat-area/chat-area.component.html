@@ -1,14 +1,8 @@
 <div class="container h-full w-[50%]">
-    <div class="div1 p-2 w-[50%] h-full rounded-tl-xl rounded-bl-xl border" [hidden]="divsService.currentDiv !== 1">
+    <div id="base" class="div1 p-2 w-[50%] h-full rounded-tl-xl rounded-bl-xl border">
         <app-svg-ia />
     </div>
-    <div class="div2 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border" [hidden]="divsService.currentDiv !== 2">
-        <app-calendar />
-    </div>
-    <div class="div3 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border" [hidden]="divsService.currentDiv !== 3">
-        <app-contacts />
-    </div>
-    <div class="div4 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border" [hidden]="divsService.currentDiv !== 4">
-        <app-emails />
+    <div id="talking" class="div2 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border hidden">
+        <app-svg-talking />
     </div>
 </div>

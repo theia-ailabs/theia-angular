@@ -6,13 +6,11 @@ import * as THREE from 'three';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 
 @Component({
-  selector: 'app-svg-ia',
-  templateUrl: './svg-ia.component.html',
-  styleUrls: ['./svg-ia.component.css']
+  selector: 'app-svg-talking',
+  templateUrl: './svg-talking.component.html',
+  styleUrls: ['./svg-talking.component.css']
 })
-
-export class SvgIaComponent implements OnInit {
-
+export class SvgTalkingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
@@ -44,7 +42,7 @@ export class SvgIaComponent implements OnInit {
 
       createObjects();
 
-      document.querySelector('.canvas-container').appendChild(RENDERER.domElement);
+      document.querySelector('.canvas-container2').appendChild(RENDERER.domElement);
     }
 
 
@@ -145,7 +143,7 @@ export class SvgIaComponent implements OnInit {
 
 
     function createObjects() {
-      let geometry = new THREE.SphereGeometry(25, 255, 255);
+      let geometry = new THREE.SphereGeometry(25, 10, 160);
       const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
           uTime: { value: TIME }

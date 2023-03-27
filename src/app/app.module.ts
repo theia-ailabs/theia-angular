@@ -26,7 +26,7 @@ import { TextLoaderComponent } from './components/text-loader/text-loader.compon
 import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
 
 import { AppService } from './app.service';
-import { SvgTalkingComponent } from './svg-talking/svg-talking.component';
+import { SvgTalkingComponent } from './components/svg-talking/svg-talking.component';
 
 @NgModule({
   declarations: [

@@ -565,6 +565,13 @@ h1.span {
     background-color: transparent !important;
 }
 
+.canvas-container2 {
+    position: absolute;
+    top: -80px;
+    left: -350px;
+    z-index: 995 !important;
+}
+
 .workspace {
     position: relative !important;
     height: 200px;

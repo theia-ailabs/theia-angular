@@ -4,6 +4,16 @@
 @tailwind utilities;
 
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+    .canvas-container {
+        position: absolute;
+        top: -80px;
+        left: 0 !important;
+        z-index: 995 !important;
+        background-color: transparent !important;
+    }
+}
+
 @media screen and (max-aspect-ratio: 16/9) {
     .bg-video {
         height: 100vw;
@@ -830,6 +840,8 @@ button:hover {
 
 .chat {
     z-index: 1000;
+    width: 100%;
+    height: 95%;
 }
 
 /* Calendar */

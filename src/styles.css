@@ -286,7 +286,7 @@ html {
     overflow-x: hidden;
     box-sizing: content-box;
     font-family: 'Poppins', sans-serif;
-    background-color: transparent !important;
+    background-color: black !important;
 }
 
 /* LOADER */
@@ -533,10 +533,8 @@ h1.span {
 .canvas-container {
     position: absolute;
     top: -80px;
-    left: 0;
+    left: -350px;
     z-index: 995 !important;
-    height: 20% !important;
-    width: 20% !important;
     background-color: transparent !important;
 }
 
@@ -772,7 +770,6 @@ ul li a p:hover {
 }
 
 .content2 {
-    background: rgba(31, 41, 55, 0.5);
     border-color: var(--primary-color);
     position: relative;
     z-index: 1;

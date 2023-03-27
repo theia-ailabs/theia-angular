@@ -23,7 +23,7 @@ declare var particlesJS: any;
 
 export class LoaderComponent implements OnInit {
 
-  welcome = true;
+  loader = true;
 
   constructor() { }
 
@@ -36,6 +36,9 @@ export class LoaderComponent implements OnInit {
   }
 
   public connect(): void {
-    this.welcome = false;
+    document.getElementById('myLoader').classList.add('hidden');
+    document.getElementById('myBackground').classList.add('hidden');
+    document.getElementById('display').classList.add('block');
+
   }
 }

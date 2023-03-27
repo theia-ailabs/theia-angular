@@ -1,6 +1,6 @@
-<div class="chat p-2 w-full h-full relative rounded-tr-xl rounded-bl-xl shadow-inner overflow-y-scroll">
+<div class="chat p-2 w-full h-full relative rounded-tr-xl rounded-bl-xl shadow-inner overflow-y-scroll -mt-12 lg:m-0">
     <input type="text" (keyup.enter)="addMessage()" [(ngModel)]="userMessage"
-        class="text-center text-green-500 text-sm p-1 px-2 my-4 w-[400px] rounded-xl border border-color"
+        class="text-center text-green-500 text-sm p-1 px-2 my-4 lg:w-[400px] w-44 rounded-xl border border-color"
         placeholder="✍🏽 Ask Theia about whatever you want" />
     <div *ngFor="let x of messages" key="x.datetime">
         <div class="flex justify-start w-full -mb-4">

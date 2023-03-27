@@ -15,9 +15,6 @@ export class AppComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await services.askRecord();
     await services.askTheia('hello');
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000);
   }
 
 }

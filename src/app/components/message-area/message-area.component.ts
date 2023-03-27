@@ -35,4 +35,5 @@ export class MessageAreaComponent {
     this.messages.push(msg);
     console.log(this.messages);
   }
+
 }

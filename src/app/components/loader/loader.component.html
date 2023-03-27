@@ -27,14 +27,14 @@
             </h1>
             <div class="mt-4">
                 <div class="vertical-centered-box mt-32 sm:-mt-56 z-10">
-                    <div class="loader-line-mask">
+                    <div id="circle" class="loader-line-mask">
                         <div class="content-box">
                             <div class="loader-line"></div>
                             <div class="loader-circle"></div>
                         </div>
                     </div>
-                    <button (click)="connect()"
-                        class="connect-btn border bg-orange-300/80 border-gray-500 text-sm p-2 px-4 uppercase rounded-xl">
+                    <button id="connect-btn" (click)="connect()"
+                        class="connect-btn hidden border bg-orange-300/80 border-gray-500 text-sm p-2 px-4 uppercase rounded-xl">
                         Connect
                     </button>
                 </div>
@@ -45,6 +45,6 @@
         </div>
     </section>
 </div>
-<app-background-canvas id="myBackground" class="h-screen overflow-y-hidden" />
+<app-background-canvas id="myBackground" class="overflow-hidden" />
 <!-- stats - count particles -->
 <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->

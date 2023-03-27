@@ -29,6 +29,9 @@ export class LoaderComponent implements OnInit {
 
   public ngOnInit(): void {
     this.invokeParticles();
+    setTimeout(() => {
+      this.loading();
+    }, 10000);
   }
 
   public invokeParticles(): void {
@@ -38,7 +41,11 @@ export class LoaderComponent implements OnInit {
   public connect(): void {
     document.getElementById('myLoader').classList.add('hidden');
     document.getElementById('myBackground').classList.add('hidden');
-    document.getElementById('display').classList.add('block');
+    document.getElementById('display').classList.remove('hidden');
+  }
 
+  public loading(): void {
+    document.getElementById('circle').classList.add('hidden');
+    document.getElementById('connect-btn').classList.remove('hidden');
   }
 }

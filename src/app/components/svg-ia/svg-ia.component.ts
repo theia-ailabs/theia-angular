@@ -23,13 +23,21 @@ export class SvgIaComponent implements OnInit {
     let COMPOSER: any;
     let TIME = 10; // Let it be non zero at start
 
-    main()
+    main();
+
+    const audio = document.getElementById('myAudio') as HTMLAudioElement;
+    audio.addEventListener('play', changeObjects);
+    audio.addEventListener('pause', createObjects);
 
     function main() {
       init();
       animate();
     }
 
+    function main2() {
+      init2();
+      animate()
+    }
 
     function init() {
       initScene();
@@ -40,6 +48,19 @@ export class SvgIaComponent implements OnInit {
       initEventListeners();
 
       createObjects();
+
+      document.querySelector('.canvas-container').appendChild(RENDERER.domElement);
+    }
+
+    function init2() {
+      initScene();
+      initCamera();
+      initRenderer();
+      initComposer();
+      initControls();
+      initEventListeners();
+
+      changeObjects();
 
       document.querySelector('.canvas-container').appendChild(RENDERER.domElement);
     }
@@ -191,6 +212,60 @@ export class SvgIaComponent implements OnInit {
 
       const sphere = new THREE.Mesh(geometry, shaderMaterial);
 
+      SCENE.add(sphere);
+    }
+
+    function changeObjects() {
+
+      let geometry = new THREE.SphereGeometry(25, 10, 400);
+      const shaderMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: TIME }
+        },
+        transparent: true,
+        side: THREE.DoubleSide,
+        vertexShader: `
+          uniform float uTime;
+
+          varying vec3 vPosition;
+          varying vec2 vUv;
+
+          void main() {
+              vec3 delta = 10.0 * normal * sin(
+                  abs(position.x) * 100.0 +
+                  abs(position.y) * 100.0 +
+                  abs(position.z) * 100.0 + uTime * 10.0);
+
+              vec3 newPosition = position + delta;
+
+              vUv = uv;
+              vPosition = newPosition;
+
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+          }
+        `,
+        fragmentShader: `
+        uniform float uTime;
+    
+        varying vec3 vPosition;
+        varying vec2 vUv;
+        
+        
+        void main() {
+            if (length(vPosition) <= 34.0) {
+                gl_FragColor = vec4(vec3(0.0), 0.0);
+            } else {
+                if (sin(vUv.x * 1000.0) <= 0.0001 && sin(vUv.y * 1000.0) <= 0.0001) {
+                    gl_FragColor = vec4(vec3(0.0), 0.0);
+                } else {
+                    gl_FragColor = vec4(194.0/255.0, 0.0, 255.0/255.0, 1.0);
+                }
+            }
+          }
+        `})
+
+      const sphere = new THREE.Mesh(geometry, shaderMaterial);
+      sphere.name = 'sphere'; // Darle un nombre para poder eliminarla después
       SCENE.add(sphere);
     }
   }

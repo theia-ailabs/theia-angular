@@ -889,6 +889,13 @@ div.fc-view-harness.fc-view-harness-active {
 
 /* FOOTER */
 #myFooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background: rgba(31, 41, 55, 0.8) !important;
     border-top: 1px double white;
+}
+
+#display {
+    min-height: 100vh;
 }

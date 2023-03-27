@@ -44,30 +44,18 @@
     <div></div>
     <div></div>
     <div></div>
-
-    <div class="block lg:hidden">
-        <button id="nav-toggle"
-            class="flex items-center px-3 py-2 mt-1 mr-5 border rounded text-white border-white hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-        </button>
-    </div>
-    <div class="w-full h-full flex-end lg:flex lg:items-center lg:w-auto hidden lg:pt-0" id="nav-content">
-        <ul class="flex h-full flex-end justify-center items-center">
-            <li class="mx-6 align-middle">
+    <div class="h-full flex flex-end w-auto lg:pt-0 lg:pl-10" id="nav-content">
+        <ul class="flex h-full flex-end mr-3 justify-center items-center">
+            <li class="ml-6 align-middle">
                 <p>Bienvenido, Sr. X</p>
             </li>
-            <li class="mx-6 align-middle">
+            <li>
+                <audio id='myAudio' src='./../../../assets/sounds/Welcome.mp3' type='audio/mp3'></audio>
+                <button onclick="document.getElementById('myAudio').play()">Play</button>
+            </li>
+            <li class="ml-6 align-middle">
                 <img src="./../../.././assets/img/profile.png" class="w-[50px] h-[50px] " alt="profile">
             </li>
         </ul>
     </div>
 </div>
-<script>
-    //Javascript to toggle the menu
-    document.getElementById('nav-toggle').onclick = function () {
-        document.getElementById("nav-content").classList.toggle("hidden");
-    }
-</script>

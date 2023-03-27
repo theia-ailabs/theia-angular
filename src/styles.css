@@ -532,7 +532,7 @@ h1.span {
 
 .canvas-container {
     position: absolute;
-    top: -100px;
+    top: -80px;
     left: 0;
     z-index: 995 !important;
     height: 20% !important;
@@ -715,6 +715,13 @@ a span {
 
 /* MAIN DISPLAY */
 /* Header */
+#nav-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
 .logo {
     font-weight: normal;
     font-family: 'Cubics', cursive;
@@ -747,6 +754,10 @@ a span {
 
 .header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 ul li a p:hover {
@@ -817,8 +828,11 @@ button:hover {
 
 .canvas-container canvas {
     object-fit: 16/9;
-    max-height: 600px;
     background-color: transparent !important;
+}
+
+.chat {
+    z-index: 1000;
 }
 
 /* Calendar */

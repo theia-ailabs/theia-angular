@@ -18,7 +18,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserPlatformLocation } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
+
 import { LoaderComponent } from './components/loader/loader.component';
 import { RouterOutlet } from '@angular/router';
 import { BackgroundCanvasComponent } from './components/background-canvas/background-canvas.component';
@@ -39,7 +39,6 @@ import { AppService } from './app.service';
     CalendarComponent,
     ContactsComponent,
     EmailsComponent,
-    HomeComponent,
     LoaderComponent,
     BackgroundCanvasComponent,
     TextLoaderComponent,

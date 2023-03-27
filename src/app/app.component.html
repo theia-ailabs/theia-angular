@@ -2,7 +2,7 @@
 <div id="particles-js">
 </div>
 <app-loader [class.hidden]="!loading" />
-<div id="display">
+<div id="display" [class.hidden]="loading">
     <div id="nav-bar" class="fixed w-full bg-black">
         <app-nav-bar />
     </div>

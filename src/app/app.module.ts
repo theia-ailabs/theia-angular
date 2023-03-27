@@ -51,7 +51,7 @@ import { AppService } from './app.service';
     SocialLoginModule,
     RouterOutlet,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     {

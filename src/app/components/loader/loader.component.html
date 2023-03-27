@@ -1,39 +1,46 @@
-<div class="loader-group">
-    <section class="nav">
-        <div class="loader-head">
-            <h1><span class="loader">
-                    <span class="m">B</span>
-                    <span class="m">I</span>
-                    <span class="m">E</span>
-                    <span class="m">N</span>
-                    <span class="m">V</span>
-                    <span class="m">E</span>
-                    <span class="m">N</span>
-                    <span class="m">I</span>
-                    <span class="m">D</span>
-                    <span class="m">O</span>
-                    <span class="m">S</span>
-                    <span class="m">&nbsp;</span>
-                    <span class="m">A</span>
-                    <span class="m">&nbsp;</span>
-                    <span class="m">T</span>
-                    <span class="m">H</span>
-                    <span class="m">E</span>
-                    <span class="m">I</span>
-                    <span class="m">A</span>
-                </span></h1>
-            <app-text-loader class="w-full" />
-        </div>
-        <div class="vertical-centered-box">
-            <div class="content-box">
-                <div class="loader-circle"></div>
-                <div class="loader-line-mask">
-                    <div class="loader-line"></div>
+<div class="loader-group w-full h-screen">
+    <section class="text-center flex flex-wrap justify-center">
+        <div class="loader-head w-full text-center">
+            <h1 class="w-full">
+                <div class="loader w-72 w-max-96 m-auto flex flex-wrap justify-center">
+                    <div class="text-lg my-4">
+                        <span class="m">W</span>
+                        <span class="m">E</span>
+                        <span class="m">L</span>
+                        <span class="m">C</span>
+                        <span class="m">O</span>
+                        <span class="m">M</span>
+                        <span class="m">E</span>
+                        <span class="m">&nbsp;</span>
+                        <span class="m">T</span>
+                        <span class="m">O</span>
+                    </div>
+                    <div class="text-5xl my-4">
+                        <span class="m">T</span>
+                        <span class="m">H</span>
+                        <span class="m">E</span>
+                        <span class="m">I</span>
+                        <span class="m">A</span>
+                    </div>
+                </div>
+            </h1>
+            <div class="mt-4">
+                <app-text-loader class="w-full" />
+                <div class="vertical-centered-box mt-32 sm:-mt-56 z-10">
+                    <div class="loader-line-mask">
+                        <div class="content-box">
+                            <div class="loader-circle"></div>
+                            <div class="loader-line"></div>
+                        </div>
+                    </div>
+                    <button class="connect-btn -mt-16 border border-gray-500 text-sm p-4 rounded-xl">
+                        Connect
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 </div>
-<app-background-canvas>
-    <!-- stats - count particles -->
-    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+<app-background-canvas />
+<!-- stats - count particles -->
+<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->

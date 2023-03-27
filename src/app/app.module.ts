@@ -26,6 +26,7 @@ import { TextLoaderComponent } from './components/text-loader/text-loader.compon
 import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
 
 import { AppService } from './app.service';
+import { SvgTalkingComponent } from './svg-talking/svg-talking.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppService } from './app.service';
     BackgroundCanvasComponent,
     TextLoaderComponent,
     SvgIaComponent,
+    SvgTalkingComponent,
   ],
   imports: [
     BrowserModule,

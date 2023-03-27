@@ -1,7 +1,7 @@
 export interface Answer {
     question: string;
     answer: string;
-    audio: Buffer;
+    audio: any;
 }
 
 export interface User {

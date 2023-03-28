@@ -144,7 +144,7 @@ export class BackgroundCanvasComponent implements OnInit {
   }
 
   startTimer() {
-    this.timeoutId = setTimeout(this.showSleepScreen.bind(this), 12000);
+    this.timeoutId = setTimeout(this.showSleepScreen.bind(this), 50000);
   }
 
   resetTimer() {

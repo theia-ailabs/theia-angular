@@ -21,7 +21,7 @@ export class AppService {
 
   init() {
     this.recognition.interimResults = true;
-    this.recognition.lang = 'en-US';
+    this.recognition.lang = 'es';
 
     this.recognition.addEventListener('result', (e: { results: Iterable<unknown> | ArrayLike<unknown>; }) => {
       const transcript = Array.from(e.results)

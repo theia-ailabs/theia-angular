@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
-import { Message } from './../../types/index';
+
+export interface Message {
+  author: string;
+  message: string;
+  datetime: string;
+}
 
 @Component({
   selector: 'app-message-area',
@@ -25,6 +30,7 @@ export class MessageAreaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.startService();
   }
 
   startService() {

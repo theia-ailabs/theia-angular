@@ -254,22 +254,22 @@
 /* Font Families */
 @font-face {
     font-family: 'KGSketch';
-    src: url(./app/assets/fonts/KGSecondChancesSketch.ttf);
+    src: url(./assets/fonts/KGSecondChancesSketch.ttf);
 }
 
 @font-face {
     font-family: 'KGSolid';
-    src: url(./app/assets/fonts/KGSecondChancesSolid.ttf);
+    src: url(./assets/fonts/KGSecondChancesSolid.ttf);
 }
 
 @font-face {
     font-family: 'Greek';
-    src: url(./app/assets/fonts/Greek.ttf);
+    src: url(./assets/fonts/Greek.ttf);
 }
 
 @font-face {
     font-family: 'Cubics';
-    src: url(./app/assets/fonts/cubic.ttf);
+    src: url(./assets/fonts/cubic.ttf);
 }
 
 /* Variables */

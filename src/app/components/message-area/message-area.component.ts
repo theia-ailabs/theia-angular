@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from 'src/app/app.service';
-
-export interface Message {
-  author: string;
-  message: string;
-  datetime: string;
-}
+import { AppService } from '../../app.service';
+import { VoiceRec } from '../../services/voiceRec';
+import { getDate, getTime } from '../../utils';
+import { Message } from '../../types';
 
 @Component({
   selector: 'app-message-area',
@@ -16,50 +13,36 @@ export interface Message {
 
 export class MessageAreaComponent implements OnInit {
 
-  textSound = this.service.textSound;
-  soundMessages: Message[];
   userMessage: string;
   messages: Message[];
 
   constructor(public service: AppService) {
-    this.textSound = "";
-    this.soundMessages = [];
     this.messages = [];
     this.userMessage = "";
-    this.service.init();
   }
 
-  ngOnInit(): void {
-    this.startService();
+  async ngOnInit(): Promise<void> {
+    const speechRec = new VoiceRec();
+    const audioMsg = await speechRec.start();
+    this.voiceMsg(audioMsg);
   }
 
-  startService() {
-    this.service.start()
+  voiceMsg(audioMsg: string): void {
+    const msg: Message = {
+      author: 'User',
+      message: audioMsg,
+      datetime: getDate() + ' ' + getTime()
+    }
+    this.messages.push(msg);
   }
 
-  stopService() {
-    this.service.stop()
-  }
-
-  addMessage(): void {
-    console.log(this.userMessage);
+  inputMessage(): void {
     const msg: Message = {
       author: 'User',
       message: this.userMessage,
-      datetime: 'datetime'
+      datetime: getDate() + ' ' + getTime()
     }
     this.messages.push(msg);
-    console.log(this.messages);
-  }
-
-
-  addSoundMessage(): void {
-    const smsg: Message = {
-      author: 'Theia',
-      message: this.textSound,
-      datetime: 'datetime'
-    }
-    this.soundMessages.push(smsg);
   }
 
 }

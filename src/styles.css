@@ -347,6 +347,11 @@ app-loader {
     height: 38px !important;
 }
 
+.connect-btn:hover {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
 .vertical-centered-box {
     position: absolute;
     display: block;

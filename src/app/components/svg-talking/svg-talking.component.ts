@@ -143,7 +143,7 @@ export class SvgTalkingComponent implements OnInit {
 
 
     function createObjects() {
-      let geometry = new THREE.SphereGeometry(25, 10, 160);
+      let geometry = new THREE.SphereGeometry(25, 160, 10);
       const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
           uTime: { value: TIME }
@@ -151,42 +151,32 @@ export class SvgTalkingComponent implements OnInit {
         transparent: true,
         side: THREE.DoubleSide,
         vertexShader: `
-          uniform float uTime;
-
-          varying vec3 vPosition;
-          varying vec2 vUv;
-
-          void main() {
-              vec3 delta = 10.0 * normal * sin(
-                  abs(position.x) * 100.0 +
-                  abs(position.y) * 100.0 +
-                  abs(position.z) * 100.0 + uTime * 10.0);
-
-              vec3 newPosition = position + delta;
-
-              vUv = uv;
-              vPosition = newPosition;
-
-              gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-          }
-        `,
-        fragmentShader: `
         uniform float uTime;
     
-        varying vec3 vPosition;
-        varying vec2 vUv;
+        varying vec3 vNormal;
         
-        
+    
         void main() {
-            if (length(vPosition) <= 34.0) {
-                gl_FragColor = vec4(vec3(0.0), 0.0);
-            } else {
-                if (sin(vUv.x * 1000.0) <= 0.0001 && sin(vUv.y * 1000.0) <= 0.0001) {
-                    gl_FragColor = vec4(vec3(0.0), 0.0);
-                } else {
-                    gl_FragColor = vec4(194.0/255.0, 0.0, 255.0/255.0, 1.0);
-                }
-            }
+            vNormal = normal;
+            
+            vec3 delta = 10.0 * normal * sin(normal.x + normal.y * 10.0 + normal.z + uTime * 10.0);
+            
+            vec3 newPosition = position + delta;
+    
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+        }
+        `,
+        fragmentShader: `
+          uniform float uTime;
+      
+          varying vec3 vNormal;
+          
+          
+          void main() {
+            vec3 color1 = vec3(194.0/255.0, 0.0, 255.0/255.0);
+            vec3 color2 = vec3(227.0/255.0, 155.0/255.0, 0.0);
+            
+            gl_FragColor = vec4(mix(color1, color2, vNormal.z), 0.5);
           }
         `})
 

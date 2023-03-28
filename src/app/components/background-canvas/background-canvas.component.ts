@@ -16,7 +16,6 @@ export class BackgroundCanvasComponent implements OnInit {
   ngOnInit(): void {
     //Empieza a contar
     this.startTimer();
-    window.addEventListener('mousemove', this.resetTimer.bind(this));
     window.addEventListener('keypress', this.resetTimer.bind(this));
     const onBeforeCompile = (shader: any) => {
       shader.uniforms.time = gu.time;

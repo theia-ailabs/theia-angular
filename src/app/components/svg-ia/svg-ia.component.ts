@@ -153,44 +153,50 @@ export class SvgIaComponent implements OnInit {
         transparent: true,
         side: THREE.DoubleSide,
         vertexShader: `
-          uniform float uTime;
+      uniform float uTime;
 
-          varying vec3 vPosition;
-          varying vec2 vUv;
+      varying vec3 vPosition;
+      varying vec2 vUv;
+      varying vec3 vColor;
 
-          void main() {
-              vec3 delta = 10.0 * normal * sin(
-                  abs(position.x) * 100.0 +
-                  abs(position.y) * 100.0 +
-                  abs(position.z) * 100.0 + uTime * 10.0);
+      void main() {
+          vec3 delta = 10.0 * normal * sin(
+              abs(position.x) * 100.0 +
+              abs(position.y) * 100.0 +
+              abs(position.z) * 100.0 + uTime * 10.0);
 
-              vec3 newPosition = position + delta;
+          vec3 newPosition = position + delta;
 
-              vUv = uv;
-              vPosition = newPosition;
+          float d = length(position);
+          vec3 color = mix(vec3(100.0/255.0, 50.0/255.0, 255.0/255.0), vec3(227.0/255.0, 155.0/255.0, 0.0/255.0), smoothstep(0.3, 0.6, d/34.0));
 
-              gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-          }
-        `,
+          vUv = uv;
+          vPosition = newPosition;
+          vColor = color;
+
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+      }
+    `,
         fragmentShader: `
-        uniform float uTime;
+    uniform float uTime;
     
-        varying vec3 vPosition;
-        varying vec2 vUv;
-        
-        
-        void main() {
-            if (length(vPosition) <= 34.0) {
-                gl_FragColor = vec4(vec3(0.0), 0.0);
-            } else {
-                if (sin(vUv.x * 1000.0) <= 0.0001 && sin(vUv.y * 1000.0) <= 0.0001) {
-                    gl_FragColor = vec4(vec3(0.0), 0.0);
-                } else {
-                    gl_FragColor = vec4(194.0/255.0, 0.0, 255.0/255.0, 1.0);
-                }
-            }
-          }
-        `})
+    varying vec3 vPosition;
+    varying vec2 vUv;
+    
+    void main() {
+        if (length(vPosition) <= 34.0) {
+            gl_FragColor = vec4(vec3(0.0), 0.0);
+        } else {
+            float d = length(abs(vPosition) / vec3(40.0, 10.0, 40.0));
+            d = clamp(d, 0.0, 1.0);
+            vec3 color1 = vec3(194.0/255.0, 0.0, 255.0/255.0);
+            vec3 color2 = vec3(227.0/255.0, 155.0/255.0, 0.0);
+            vec3 mixedColor = mix(color1, color2, d) / 255.;
+            vec3 finalColor = mix(color1, color2, step(0.5, d));
+            gl_FragColor = vec4(finalColor, 1.0);
+        }
+    }
+`})
 
       const sphere = new THREE.Mesh(geometry, shaderMaterial);
 

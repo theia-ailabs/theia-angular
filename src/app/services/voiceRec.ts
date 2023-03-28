@@ -38,9 +38,6 @@ export class VoiceRec {
                 console.log(this.tempWords);
             }
         });
-        setTimeout(() => {
-            this.stopRec = !this.stopRec;
-        }, 3000);
         return this.textSound;
     }
 

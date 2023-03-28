@@ -377,6 +377,10 @@ app-loader {
     font-size: 0;
 }
 
+.super-z {
+    z-index: 9999 !important;
+    position: relative !important;
+}
 
 .loader-circle {
     position: absolute;

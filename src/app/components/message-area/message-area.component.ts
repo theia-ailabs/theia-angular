@@ -29,7 +29,7 @@ export class MessageAreaComponent implements OnInit {
 
   voiceMsg(audioMsg: string): void {
     const msg: Message = {
-      author: 'User',
+      author: 'Recorder',
       message: audioMsg,
       datetime: getDate() + ' ' + getTime()
     }
@@ -43,6 +43,7 @@ export class MessageAreaComponent implements OnInit {
       datetime: getDate() + ' ' + getTime()
     }
     this.messages.push(msg);
+    this.userMessage = '';
     console.log(this.messages);
   }
 

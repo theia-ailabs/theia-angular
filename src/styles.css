@@ -788,7 +788,7 @@ a span {
 }
 
 .border-color {
-    border: 1px solid var(--primary-color);
+    border: 1px solid #ff22ff;
 }
 
 .header {

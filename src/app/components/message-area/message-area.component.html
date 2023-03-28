@@ -1,15 +1,21 @@
 <div class="chat p-2 w-full h-full relative rounded-tr-xl rounded-bl-xl shadow-inner overflow-y-scroll -mt-12 lg:m-0">
+    <div class="my-3 mx-auto flex">
+        <h1>Voice recognition</h1>
+        <button style="margin: 10px;" (click)="startService()">Start</button>
+        <button style="margin: 10px;" (click)="stopService()">Stop</button>
+        <p>{{ service.textSound }}</p>
+    </div>
     <input type="text" (keyup.enter)="addMessage()" [(ngModel)]="userMessage"
         class="text-center text-green-500 text-sm p-1 px-2 my-4 lg:w-[300px] w-44 rounded-xl border border-color"
         placeholder="✍🏽 Ask something" />
-    <div *ngFor="let x of messages" key="x.datetime">
-        <div class="flex justify-start w-full -mb-4">
+    <div key="x.datetime">
+        <div *ngFor="let x in soundMessages" class="flex justify-start w-full -mb-4">
             <div class="text-center flex align-bottom justify-center">
                 <img class="w-10 h-10 rounded-full mr-1 ml-2 m-auto mb-2" src="../../../assets/img/profile.png" />
             </div>
             <div>
                 <div class="subcontent p-2 px-8 my-2 rounded-xl rounded-bl-none w-[280px] shadow-lg">
-                    {{ x.message }}
+                    {{ x.message}}
                 </div>
                 <div class="flex mb-4 ml-1 text-xs">
                     <div
@@ -22,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-end w-full -mb-4">
+        <div *ngFor="let x in messages" class="flex justify-end w-full -mb-4">
             <div>
                 <div class="subcontent2 p-2 px-8 my-2 rounded-xl rounded-br-none w-[280px] shadow-lg">
                     {{x.message}}

@@ -12,3 +12,9 @@ export interface User {
     gender: string;
     wallet: string;
 }
+
+export interface Message {
+    author: string;
+    message: string;
+    datetime: string;
+} 

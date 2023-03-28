@@ -43,6 +43,7 @@ export class MessageAreaComponent implements OnInit {
       datetime: getDate() + ' ' + getTime()
     }
     this.messages.push(msg);
+    console.log(this.messages);
   }
 
 }

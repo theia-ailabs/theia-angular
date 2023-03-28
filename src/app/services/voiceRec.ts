@@ -4,10 +4,8 @@ declare let webkitSpeechRecognition: any;
 
 export class VoiceRec {
 
-    theiaUrl = SERVER_URL + '/theia';
-
     recognition = new webkitSpeechRecognition();
-    isStoppedSpeechRecog = false;
+    stopRec = false;
     public textSound = "";
     tempWords!: string;
 
@@ -15,7 +13,7 @@ export class VoiceRec {
 
     init() {
         this.recognition.interimResults = true;
-        this.recognition.lang = 'es';
+        this.recognition.lang = 'en-US';
 
         this.recognition.addEventListener('result', (e: { results: Iterable<unknown> | ArrayLike<unknown>; }) => {
             const transcript = Array.from(e.results)
@@ -27,24 +25,27 @@ export class VoiceRec {
         });
     }
 
-    async start(): Promise<string> {
-        this.isStoppedSpeechRecog = false;
+    start(): string {
+        this.stopRec = false;
         this.recognition.start();
         console.log("Speech recognition started")
-        await this.recognition.addEventListener('end', (): string | void => {
-            if (this.isStoppedSpeechRecog) {
+        this.recognition.addEventListener('end', (): string | void => {
+            if (this.stop) {
                 this.recognition.stop();
                 console.log("End speech recognition");
-                return this.textSound;
             } else {
                 this.recognition.start();
                 console.log(this.tempWords);
             }
         });
+        setTimeout(() => {
+            this.stopRec = !this.stopRec;
+        }, 3000);
         return this.textSound;
     }
-    stop() {
-        this.isStoppedSpeechRecog = true;
+
+    stop(): void {
+        this.stopRec = true;
         this.wordConcat();
         this.recognition.stop();
         console.log("End speech recognition");

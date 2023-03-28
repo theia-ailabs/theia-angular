@@ -21,9 +21,9 @@ export class MessageAreaComponent implements OnInit {
     this.userMessage = "";
   }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit() {
     const speechRec = new VoiceRec();
-    const audioMsg = await speechRec.start();
+    const audioMsg = speechRec.start();
     this.voiceMsg(audioMsg);
   }
 

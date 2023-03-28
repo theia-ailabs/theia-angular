@@ -2,6 +2,9 @@
     <input type="text" (keyup.enter)="inputMessage()" [(ngModel)]="userMessage"
         class="text-center bg-transparent text-white text-sm p-1 px-2 my-4 lg:w-[300px] w-44 rounded-xl border border-color"
         placeholder="✍🏽 Ask something" />
+    <div class="subcontent p-2 px-8 my-2 rounded-xl rounded-bl-none w-[280px] shadow-lg">
+        {{ messages[1]}}
+    </div>
     <div class="super-z" *ngFor="let x in messages" key="x.message">
         <div class="super-z flex justify-start w-full -mb-4 bg-red-300">
             <div class="text-center flex align-bottom justify-center">

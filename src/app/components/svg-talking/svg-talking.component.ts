@@ -143,7 +143,7 @@ export class SvgTalkingComponent implements OnInit {
 
 
     function createObjects() {
-      let geometry = new THREE.SphereGeometry(25, 160, 10);
+      let geometry = new THREE.SphereGeometry(26, 160, 10);
       const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
           uTime: { value: TIME }

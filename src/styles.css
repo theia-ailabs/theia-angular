@@ -12,6 +12,14 @@
         z-index: 995 !important;
         background-color: transparent !important;
     }
+
+    .canvas-container2 {
+        position: absolute;
+        top: -80px;
+        left: 0 !important;
+        z-index: 995 !important;
+        background-color: transparent !important;
+    }
 }
 
 @media screen and (max-aspect-ratio: 16/9) {
@@ -809,14 +817,15 @@ ul li a p:hover {
 }
 
 .subcontent {
-    background-color: var(--secondary-color);
+    background-color: #ff22ff;
     color: white;
     border: 1px white solid;
 }
 
 .subcontent2 {
-    background-color: white;
+    background-color: #ffff74;
     color: black;
+    border: 1px white solid;
 }
 
 .headbutton {

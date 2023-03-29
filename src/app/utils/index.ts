@@ -3,7 +3,7 @@ export const sleep = (ms: number) => {
   return new Promise((r) => setTimeout(r, ms));
 };
 
-export async function setLocation(): string {
+export async function setLocation(): Promise<string> {
   let lang = 'en';
   await fetch('https://api.ipregistry.co/?key=0nxj6f90k9nup0j3')
     .then(function (response) {

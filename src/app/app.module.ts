@@ -27,7 +27,7 @@ import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
 import { SvgTalkingComponent } from './components/svg-talking/svg-talking.component';
 import { AppService } from './app.service';
 import { AudioWaveComponent } from './components/audio-wave/audio-wave.component';
-import { SleeperScreenComponent } from './sleeper-screen/sleeper-screen.component';
+import { SleeperScreenComponent } from './components/sleeper-screen/sleeper-screen.component';
 
 @NgModule({
   declarations: [
@@ -78,4 +78,4 @@ import { SleeperScreenComponent } from './sleeper-screen/sleeper-screen.componen
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -8,8 +8,6 @@ import {
 } from '@angular/animations';
 import { AppService } from '../../app.service';
 
-declare const particlesJS: any;
-
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
@@ -44,14 +42,9 @@ export class LoaderComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.invokeParticles();
     setTimeout(() => {
       this.loading();
-    }, 10000);
-  }
-
-  public invokeParticles(): void {
-    particlesJS.load('particles-js', 'assets/particles.json', function () {});
+    }, 12000);
   }
 
   public connect(): void {

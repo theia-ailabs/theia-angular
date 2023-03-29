@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Message } from './types';
 import { VoiceRec } from './services/voiceRec';
 import { getDate, getTime } from './utils';
-import { getLang } from './services/getLang';
 import { langs } from './langs';
 
 @Injectable({
@@ -25,6 +24,16 @@ export class AppService {
     const speechRec = new VoiceRec();
     const audioMsg = speechRec.start();
     this.voiceMsg(audioMsg);
+  }
+
+  getLang() {
+    fetch('https://api.ipregistry.co/?key=0nxj6f90k9nup0j3')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (payload) {
+        this.lang = payload.location.language.code;
+      });
   }
 
   voiceMsg(audioMsg: string): void {

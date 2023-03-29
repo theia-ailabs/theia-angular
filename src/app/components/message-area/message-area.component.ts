@@ -10,18 +10,18 @@ import { Message } from '../../types';
   providers: [AppService],
 })
 export class MessageAreaComponent implements OnInit {
+  appService: AppService;
   lang: string;
+  placeholder: string;
   userMessage: string;
   messages: Message[];
-  appService: AppService;
-  placeholder: string;
 
   constructor(public service: AppService) {
     this.appService = new AppService();
     this.lang = this.appService.lang;
+    this.placeholder = this.appService.langs[this.lang].input;
     this.userMessage = '';
     this.messages = this.appService.messages;
-    this.placeholder = this.appService.langs[this.lang].input;
   }
 
   ngOnInit(): void {

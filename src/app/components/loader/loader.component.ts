@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, transition, animate, style } from '@angular/animations';
+import {
+  trigger,
+  state,
+  transition,
+  animate,
+  style,
+} from '@angular/animations';
+import { AppService } from '../../app.service';
 
-declare var particlesJS: any;
+declare const particlesJS: any;
 
 @Component({
   selector: 'app-loader',
@@ -9,23 +16,32 @@ declare var particlesJS: any;
   styleUrls: ['./loader.component.css'],
   animations: [
     trigger('fadeAnimation', [
-      state('visible', style({
-        opacity: 1
-      })),
+      state(
+        'visible',
+        style({
+          opacity: 1,
+        })
+      ),
       transition(':leave', [
-        animate('0.3s', style({
-          opacity: 0
-        }))
-      ])
-    ])
-  ]
+        animate(
+          '0.3s',
+          style({
+            opacity: 0,
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
-
 export class LoaderComponent implements OnInit {
-
+  appService: AppService;
+  lang: string;
   loader = true;
 
-  constructor() { }
+  constructor() {
+    this.appService = new AppService();
+    this.lang = this.appService.lang;
+  }
 
   public ngOnInit(): void {
     this.invokeParticles();
@@ -35,7 +51,7 @@ export class LoaderComponent implements OnInit {
   }
 
   public invokeParticles(): void {
-    particlesJS.load('particles-js', 'assets/particles.json', function () { });
+    particlesJS.load('particles-js', 'assets/particles.json', function () {});
   }
 
   public connect(): void {

@@ -15,7 +15,7 @@ export class AppService {
 
   constructor() {
     this.langs = langs;
-    this.lang = 'en';
+    this.lang = 'es';
     this.username = 'Alex';
     this.messages = [];
   }

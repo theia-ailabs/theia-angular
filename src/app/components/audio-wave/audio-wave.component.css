@@ -1,0 +1,19 @@
+#waveform {
+  z-index: 9999 !important;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  color: black;
+  background-color: #fff; 
+}
+
+#waveform-timeline {
+  z-index: 9999 !important;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  color: black;
+  background-color: #fff;
+}

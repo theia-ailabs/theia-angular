@@ -3,16 +3,21 @@ export const sleep = (ms: number) => {
   return new Promise((r) => setTimeout(r, ms));
 };
 
-export async function setLocation(): Promise<string> {
-  let lang = 'en';
+export async function getLocation(): Promise<object> {
+  let location = {};
   await fetch('https://api.ipregistry.co/?key=0nxj6f90k9nup0j3')
     .then(function (response) {
       return response.json();
     })
     .then(function (payload) {
-      lang = payload.location.country.code.lowercase();
+      location = {
+        setIp: payload.ip,
+        setFlag: payload.location.country.flag.emoji,
+        setCountry: payload.location.country.code,
+        setCity: payload.location.city,
+      };
     });
-  return lang;
+  return location;
 }
 
 export const getTime = (): string => {

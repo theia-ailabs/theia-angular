@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Message } from './types';
 import { VoiceRec } from './services/voiceRec';
 import { getDate, getTime } from './utils';
+import { getLang } from './services/getLang';
 import { langs } from './langs';
 
 @Injectable({
@@ -9,13 +10,13 @@ import { langs } from './langs';
 })
 export class AppService {
   langs: object;
-  lang: string;
+  lang: Promise<string>;
   username: string;
   messages: Message[];
 
   constructor() {
     this.langs = langs;
-    this.lang = 'es';
+    this.lang = getLang();
     this.username = 'Alex';
     this.messages = [];
   }

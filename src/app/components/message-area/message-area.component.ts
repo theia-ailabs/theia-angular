@@ -11,7 +11,7 @@ import { Message } from '../../types';
 })
 export class MessageAreaComponent implements OnInit {
   appService: AppService;
-  lang: Promise<string>;
+  lang: string;
   placeholder: string;
   userMessage: string;
   messages: Message[];

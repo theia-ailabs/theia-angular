@@ -10,13 +10,13 @@ import { langs } from './langs';
 })
 export class AppService {
   langs: object;
-  lang: Promise<string>;
+  lang: string;
   username: string;
   messages: Message[];
 
   constructor() {
     this.langs = langs;
-    this.lang = getLang();
+    this.lang = 'es';
     this.username = 'Alex';
     this.messages = [];
   }

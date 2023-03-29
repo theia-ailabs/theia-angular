@@ -11,7 +11,7 @@ import { Message } from '../../types';
 })
 export class MessageAreaComponent implements OnInit {
   appService: AppService;
-  lang: string;
+  lang: Promise<string>;
   placeholder: string;
   userMessage: string;
   messages: Message[];
@@ -19,7 +19,7 @@ export class MessageAreaComponent implements OnInit {
   constructor(public service: AppService) {
     this.appService = new AppService();
     this.lang = this.appService.lang;
-    this.placeholder = this.appService.langs[this.lang].input;
+    this.placeholder = this.appService.langs[String(this.lang)].input;
     this.userMessage = '';
     this.messages = this.appService.messages;
   }

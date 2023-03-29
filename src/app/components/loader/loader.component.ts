@@ -40,7 +40,7 @@ export class LoaderComponent implements OnInit {
 
   constructor() {
     this.appService = new AppService();
-    this.lang = this.appService.lang;
+    this.lang = String(this.appService.lang);
   }
 
   public ngOnInit(): void {

@@ -20,20 +20,20 @@ export class AppService {
     this.messages = [];
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getLang();
     const speechRec = new VoiceRec();
     const audioMsg = speechRec.start();
     this.voiceMsg(audioMsg);
   }
 
-  getLang() {
-    fetch('https://api.ipregistry.co/?key=0nxj6f90k9nup0j3')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (payload) {
-        this.lang = payload.location.language.code;
-      });
+  async getLang() {
+    const response = await fetch(
+      'https://api.ipregistry.co/?key=0nxj6f90k9nup0j3'
+    );
+    const payload = await response.json();
+    this.lang = payload.location.language.code;
+    return payload.location.language.code;
   }
 
   voiceMsg(audioMsg: string): void {
@@ -49,5 +49,5 @@ export class AppService {
     this.messages.push(message);
   }
 
-  init() { }
+  init() {}
 }

@@ -422,11 +422,11 @@ app-loader {
     left: 0 !important;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: transparent !important;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    z-index: 9998 !important;
+    z-index: 9999 !important;
 }
 
 .nav {
@@ -887,4 +887,12 @@ button:hover {
 
 #display {
     min-height: 100vh;
+}
+
+app-sleeper-screen {
+    position: absolute;
+    TOP: 0;
+    left: 0;
+    background-color: transparent !important;
+    z-index: 9000 !important;
 }

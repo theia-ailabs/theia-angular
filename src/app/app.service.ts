@@ -2,15 +2,20 @@ import { Injectable } from '@angular/core';
 import { Message } from './types';
 import { VoiceRec } from './services/voiceRec';
 import { getDate, getTime } from './utils';
+import { langs } from './langs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
+  langs: object;
+  lang: string;
   username: string;
   messages: Message[];
 
   constructor() {
+    this.langs = langs;
+    this.lang = 'en';
     this.username = 'Alex';
     this.messages = [];
   }

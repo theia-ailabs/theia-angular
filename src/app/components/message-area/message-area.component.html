@@ -1,7 +1,7 @@
 <div class="chat p-2 w-full h-full relative rounded-tr-xl rounded-bl-xl shadow-inner overflow-y-scroll -mt-12 lg:m-0">
     <input type="text" (keyup.enter)="inputMessage()" [(ngModel)]="userMessage"
         class="text-center bg-transparent text-white text-sm p-1 px-2 my-4 lg:w-[300px] w-44 rounded-xl border border-color"
-        placeholder="🗣️ Ask me anything" />
+        placeholder="{{placeholder}}" />
     <div class="super-z" *ngFor="let x of messages" key="x.datetime">
         <div *ngIf="x.author=='Theia'" classº="super-z flex justify-start w-full -mb-4 bg-red-300">
             <div class="text-center flex align-bottom justify-center">

@@ -16,7 +16,7 @@ export class AppService {
 
   constructor() {
     this.langs = langs;
-    this.lang = 'es';
+    this.lang = 'en';
     this.username = 'Alex';
     this.messages = [];
   }
@@ -40,5 +40,5 @@ export class AppService {
     this.messages.push(message);
   }
 
-  init() {}
+  init() { }
 }

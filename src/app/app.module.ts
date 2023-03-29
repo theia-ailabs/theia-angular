@@ -27,6 +27,7 @@ import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
 import { SvgTalkingComponent } from './components/svg-talking/svg-talking.component';
 import { AppService } from './app.service';
 import { AudioWaveComponent } from './components/audio-wave/audio-wave.component';
+import { SleeperScreenComponent } from './sleeper-screen/sleeper-screen.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AudioWaveComponent } from './components/audio-wave/audio-wave.component
     SvgIaComponent,
     SvgTalkingComponent,
     AudioWaveComponent,
+    SleeperScreenComponent,
   ],
   imports: [
     BrowserModule,

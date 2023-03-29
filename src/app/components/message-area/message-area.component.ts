@@ -12,9 +12,11 @@ import { Message } from '../../types';
 export class MessageAreaComponent implements OnInit {
   userMessage: string;
   messages: Message[];
+  appService: AppService;
 
   constructor(public service: AppService) {
-    this.messages = [];
+    this.appService = new AppService();
+    this.messages = this.appService.messages;
     this.userMessage = '';
   }
 
@@ -24,12 +26,10 @@ export class MessageAreaComponent implements OnInit {
 
   inputMessage(): void {
     const msg: Message = {
-      author: 'User',
+      author: 'Recorder',
       message: this.userMessage,
       datetime: getDate() + ' ' + getTime(),
     };
-    this.messages.push(msg);
-    this.userMessage = '';
-    console.log(this.messages);
+    this.appService.addMessage(msg);
   }
 }

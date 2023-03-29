@@ -7,9 +7,13 @@ import { getDate, getTime } from './utils';
   providedIn: 'root',
 })
 export class AppService {
-  messages: Message[] = [];
+  username: string;
+  messages: Message[];
 
-  constructor() {}
+  constructor() {
+    this.username = 'Alex';
+    this.messages = [];
+  }
 
   ngOnInit() {
     const speechRec = new VoiceRec();

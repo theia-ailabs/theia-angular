@@ -1,8 +1,11 @@
 <div class="container h-full w-[50%]">
-    <div id="base" class="div1 p-2 w-[50%] h-full rounded-tl-xl rounded-bl-xl border">
-        <app-svg-ia />
-    </div>
-    <div id="talking" class="div2 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border hidden">
-        <app-svg-talking />
-    </div>
+    <button onclick="document.getElementById('myAudio').play()">
+    <audio id="myAudio" src="./assets/sounds/welcome.mp3" autoplay></audio>
+        <div id="base" class="div1 p-2 w-[50%] h-full rounded-tl-xl rounded-bl-xl border">
+            <app-svg-ia />
+        </div>
+        <div id="talking" class="div2 p-2 w-full h-full rounded-tl-xl rounded-bl-xl border hidden">
+            <app-svg-talking />
+        </div>
+   </button>
 </div>

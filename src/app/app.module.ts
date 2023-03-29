@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MainDisplayComponent } from './components/main-display/main-display.component';
@@ -14,19 +13,20 @@ import { ErrorComponent } from './components/error/error.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { EmailsComponent } from './components/emails/emails.component';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserPlatformLocation } from '@angular/common';
-
 import { LoaderComponent } from './components/loader/loader.component';
 import { RouterOutlet } from '@angular/router';
 import { BackgroundCanvasComponent } from './components/background-canvas/background-canvas.component';
 import { TextLoaderComponent } from './components/text-loader/text-loader.component';
 import { SvgIaComponent } from './components/svg-ia/svg-ia.component';
-
-import { AppService } from './app.service';
 import { SvgTalkingComponent } from './components/svg-talking/svg-talking.component';
+import { AppService } from './app.service';
+import { AudioWaveComponent } from './components/audio-wave/audio-wave.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ import { SvgTalkingComponent } from './components/svg-talking/svg-talking.compon
     TextLoaderComponent,
     SvgIaComponent,
     SvgTalkingComponent,
+    AudioWaveComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,17 +65,15 @@ import { SvgTalkingComponent } from './components/svg-talking/svg-talking.compon
           AppService,
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              'clientId'
-            )
+            provider: new GoogleLoginProvider('clientId'),
           },
         ],
         onError: (err) => {
           console.error(err);
-        }
+        },
       } as SocialAuthServiceConfig,
-    }
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

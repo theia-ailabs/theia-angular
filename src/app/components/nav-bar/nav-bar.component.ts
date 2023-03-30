@@ -16,7 +16,7 @@ export class NavBarComponent {
     this.username = this.appService.username;
   }
 
-  showDiv(divNumber: number) {
-    this.divsService.setCurrentDiv(divNumber);
+  scrollTop(): void {
+    window.scrollTo(document.body.scrollHeight, 0);
   }
 }

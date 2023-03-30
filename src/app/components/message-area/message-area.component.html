@@ -1,10 +1,16 @@
-<button (click)="scrollTop()" class="z-20 relative p-2 pt-4 h-screen w-screen
+<div class="z-20 relative p-2 pt-4 h-screen w-screen
     opacity-100">
-    <div class="" *ngFor="let x of messages" key="x.datetime">
-        <div *ngIf="x.author==='Theia'" class="flex justify-start w-full
+    <div class="z-30 relative flex align-top top-0" *ngFor="let x of
+        appService.messages"
+        key="x.datetime">
+        <div *ngIf="x.author==='Theia'" class="z-50 relative align-top flex
+            justify-start
+            w-full
             -mb-4">
             <div>
-                <div class="ml-4 p-2 my-2 rounded-xl bg-white/10
+                <div class="text-xs text-white ml-8 mt-2 p-2 px-8 my-2
+                    rounded-xl
+                    bg-white/10
                     rounded-bl-none w-[280px] shadow-xs shadow-purple-500">
                     <app-audio-wave class="h-4 max-h-12"/>
                         {{x.message}}
@@ -32,7 +38,8 @@
             <div *ngIf="x.author!='Theia'" class="flex justify-end w-full
                 -mb-4">
                 <div>
-                    <div class="p-2 my-2 rounded-xl
+                    <div class="p-2 px-8 my-2 text-xs text-white text-semibold
+                        rounded-xl
                         rounded-br-none w-[280px] shadow-sm shadow-yellow-500">
                         <app-audio-wave class="h-4 max-h-12"/>
                             {{x.message}}
@@ -56,7 +63,8 @@
                 </div>
             </div>
 
-        </button>
+        </div>
+
         <div class="flex z-50 relative justify-center w-full">
             <input type="text" autofocus (keyup.enter)="inputMessage()"
                 [(ngModel)]="userMessage"

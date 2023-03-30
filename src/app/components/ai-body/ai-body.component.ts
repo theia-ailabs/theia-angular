@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { getSeconds } from '../../utils';
+import { getSeconds, getDate, getTime } from '../../utils';
+import { Message } from '../../types';
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-ai-body',
@@ -11,9 +13,11 @@ export class AiBodyComponent {
   talking: boolean = false;
   sleeping: boolean = false;
   audio: HTMLAudioElement;
+  appService: AppService;
 
   constructor() {
     this.audio = new Audio('../../../assets/sounds/Welcome.mp3');
+    this.appService = new AppService();
   }
 
   ngOnInit(): void {}
@@ -24,6 +28,12 @@ export class AiBodyComponent {
     this.listening = false;
     this.sleeping = false;
     this.audio.play();
+    const msg: Message = {
+      author: 'Theia',
+      message: 'Bienvenido a Theia',
+      datetime: getDate() + ' ' + getTime(),
+    };
+    this.appService.addMessage(msg);
     setTimeout(() => {
       this.toListen();
     }, miliseconds);

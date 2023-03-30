@@ -26,11 +26,8 @@ export class MessageAreaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  scrollTop(): void {
-    window.scrollTo(document.body.scrollHeight, 0);
-  }
-
   inputMessage(): void {
+    if (!this.userMessage) return;
     const msg: Message = {
       author: 'User',
       message: this.userMessage || this.service.voiceMsg['message'],
@@ -42,7 +39,7 @@ export class MessageAreaComponent implements OnInit {
     setTimeout(() => {
       const theia: Message = {
         author: 'Theia',
-        message: this.userMessage || this.service.voiceMsg['message'],
+        message: 'Hello, Im Theia your AI assistant',
         datetime: getDate() + ' ' + getTime(),
       };
       this.appService.addMessage(theia);

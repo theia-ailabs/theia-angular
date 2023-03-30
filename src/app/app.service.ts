@@ -46,8 +46,9 @@ export class AppService {
   }
 
   addMessage(message: Message) {
-    this.messages.push(message);
+    // this.messages.push(message);
+    this.messages.unshift(message);
   }
 
-  init() { }
+  init() {}
 }

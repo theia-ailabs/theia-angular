@@ -43,5 +43,6 @@ export class MessageAreaComponent implements OnInit {
       };
       this.appService.addMessage(theia);
     }, 2000);
+    window.scrollTo(0, 9999);
   }
 }

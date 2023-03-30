@@ -25,16 +25,14 @@ export class AudioWaveComponent implements OnInit, AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) {
     this.url = '../../assets/sounds/Welcome.mp3';
     this.audio = new Audio(this.url);
-    this.ms = audioMS(this.audio);
-    console.log(this.ms);
     this.isPlaying = false;
     this.generateWaveform();
-    this.onPlay();
+    this.ms = 3000;
   }
-  ngAfterViewInit(): void {
-    Promise.resolve().then(() => this.wave.load(this.url));
+  ngAfterViewInit(): void {}
+  async ngOnInit(): Promise<void> {
+    await Promise.resolve().then(() => this.wave.load(this.url));
   }
-  ngOnInit(): void {}
 
   async onPlay(): Promise<void> {
     this.isPlaying = true;

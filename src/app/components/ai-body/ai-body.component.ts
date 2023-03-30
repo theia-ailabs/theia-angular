@@ -19,13 +19,14 @@ export class AiBodyComponent {
   ngOnInit(): void {}
 
   toTalk(audio: AudioBuffer | HTMLAudioElement = this.audio) {
+    const miliseconds = getSeconds(audio) * 1000;
     this.talking = true;
     this.listening = false;
     this.sleeping = false;
     this.audio.play();
     setTimeout(() => {
       this.toListen();
-    }, getSeconds(audio) * 1000);
+    }, miliseconds);
   }
 
   toListen() {

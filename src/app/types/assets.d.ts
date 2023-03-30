@@ -27,3 +27,18 @@ declare module '*.jpg' {
   const value: any;
   export default value;
 }
+
+declare module '*.gif' {
+  const value: any;
+  export default value;
+}
+
+declare module '*.glb' {
+  const value: any;
+  export default value;
+}
+
+declare module '*.fbx' {
+  const value: any;
+  export default value;
+}

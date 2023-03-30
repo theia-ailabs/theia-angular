@@ -74,13 +74,15 @@
             <input type="text" autofocus (keyup.enter)="inputMessage()"
                 [(ngModel)]="userMessage"
                 class="z-50 fixed top-28 hover:border-yellow-500
-                text-center focus:border-green-500
-                active:border-green-500 focus:ring-1
-                bg-black/90
+                text-center
+
+                bg-black/50
                 text-white text-xs
                 shadow-inner-sm shadow-yellow-400
                 p-1 my-2
                 w-64 rounded-xl border border-purple-300
+                border-none border-bottom-purple-300
+                active:border-none
                 "
                 placeholder="{{placeholder}}" expand
                 />

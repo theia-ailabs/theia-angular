@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import services from './services';
 
 @Component({
@@ -8,7 +8,6 @@ import services from './services';
 })
 
 export class AppComponent implements OnInit {
-  loading: boolean = true;
 
   constructor() { }
 
@@ -16,5 +15,4 @@ export class AppComponent implements OnInit {
     await services.askRecord();
     await services.askTheia('hello');
   }
-
 }

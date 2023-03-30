@@ -30,8 +30,8 @@ export class MessageAreaComponent implements OnInit {
 
   inputMessage(): void {
     const msg: Message = {
-      author: 'Recorder',
-      message: this.userMessage,
+      author: 'User',
+      message: this.userMessage || this.service.voiceMsg['message'],
       datetime: getDate() + ' ' + getTime(),
     };
     this.appService.addMessage(msg);

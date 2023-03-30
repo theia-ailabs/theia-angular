@@ -49,5 +49,5 @@ export class AppService {
     this.messages.push(message);
   }
 
-  init() {}
+  init() { }
 }

@@ -18,13 +18,13 @@ export class AudioWaveComponent implements OnInit, AfterViewInit {
   url = '../../assets/sinus.wav';
   public graph = undefined;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
     return;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onPreviewPressed(): void {
     if (!this.wave) {

@@ -1,5 +1,5 @@
 .ai-talk {
-  z-index: 995 !important;
+  background: transparent !important;  
   background-color: transparent !important;
   border: none !important;
   position: fixed !important;

@@ -1,16 +1,4 @@
-<div class="z-20 flex justify-center p-2 w-full text-center fixed bottom-4
-    rounded-xl">
-    <input type="text" (keyup.enter)="inputMessage()" [(ngModel)]="userMessage"
-        class=" hover:border-yellow-500 text-center
-        bg-transparent
-        text-white text-sm
-        shadow-inner-xl shadow-yellow-200
-        p-1 my-2
-        w-44 rounded-xl border border-purple-500"
-        placeholder="{{placeholder}}" />
-</div>
-
-<div class="z-10 absolute h-full w-screen">
+<div class="z-20 relative p-2 pt-4 h-screen w-screen opacity-100">
     <div class="" *ngFor="let x of messages" key="x.datetime">
         <div *ngIf="x.author=='Theia'" class="super-z flex justify-start
             w-full -mb-4 bg-red-300">
@@ -62,4 +50,15 @@
                 </div>
             </div>
         </div>
+
+        <input type="text" autofocus (keyup.enter)="inputMessage()"
+            [(ngModel)]="userMessage"
+            class="z-50 relative fixed bottom-4 hover:border-yellow-500
+            text-center
+            bg-transparent
+            text-white text-xs
+            shadow-inner-xl shadow-yellow-200
+            p-1 my-2
+            w-44 rounded-xl border border-purple-500"
+            placeholder="{{placeholder}}" />
     </div>

@@ -33,5 +33,15 @@ export class MessageAreaComponent implements OnInit {
       datetime: getDate() + ' ' + getTime(),
     };
     this.appService.addMessage(msg);
+    this.userMessage = '';
+    window.scrollTo(0, 9999);
+    setTimeout(() => {
+      const theia: Message = {
+        author: 'Theia',
+        message: this.userMessage || this.service.voiceMsg['message'],
+        datetime: getDate() + ' ' + getTime(),
+      };
+      this.appService.addMessage(theia);
+    }, 2000);
   }
 }

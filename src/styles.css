@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Media Queries */
 @media screen and (max-width: 1024px) {
     .canvas-container {

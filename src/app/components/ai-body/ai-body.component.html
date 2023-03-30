@@ -1,0 +1,15 @@
+<div class="z-20 h-screen">
+
+    <div *ngIf="listening">
+        <button (click)="toTalk()">
+            <app-svg-ia />
+
+            </button>
+        </div>
+        <div *ngIf="talking">
+            <button (click)="toListen()">
+                <app-svg-talking />
+                </button>
+            </div>
+
+        </div>

@@ -24,9 +24,7 @@ export class MessageAreaComponent implements OnInit {
     this.messages = this.appService.messages;
   }
 
-  ngOnInit(): void {
-    return;
-  }
+  ngOnInit(): void {}
 
   inputMessage(): void {
     const msg: Message = {

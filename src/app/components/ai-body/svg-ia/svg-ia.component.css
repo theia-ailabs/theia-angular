@@ -1,0 +1,7 @@
+.ai-container {
+  z-index: 995 !important;
+  background-color: transparent !important;
+  border: none !important;
+  position: fixed !important;
+  top: 0px !important;
+}

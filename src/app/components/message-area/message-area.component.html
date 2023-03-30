@@ -1,10 +1,17 @@
-<div class="chat p-2 w-full h-full relative rounded-tr-xl rounded-bl-xl
-    shadow-inner overflow-y-scroll -mt-12 lg:m-0">
+<div class="z-20 flex justify-center p-2 w-full text-center fixed bottom-4
+    rounded-xl">
     <input type="text" (keyup.enter)="inputMessage()" [(ngModel)]="userMessage"
-        class="text-center bg-transparent text-white text-sm p-1 px-2 my-4
-        lg:w-[300px] w-44 rounded-xl border border-color"
+        class=" hover:border-yellow-500 text-center
+        bg-transparent
+        text-white text-sm
+        shadow-inner-xl shadow-yellow-200
+        p-1 my-2
+        w-44 rounded-xl border border-purple-500"
         placeholder="{{placeholder}}" />
-    <div class="super-z" *ngFor="let x of messages" key="x.datetime">
+</div>
+
+<div class="z-10 absolute h-full w-screen">
+    <div class="" *ngFor="let x of messages" key="x.datetime">
         <div *ngIf="x.author=='Theia'" class="super-z flex justify-start
             w-full -mb-4 bg-red-300">
             <div class="text-center flex align-bottom justify-center">

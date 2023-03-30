@@ -83,3 +83,7 @@ export const randomString = (length: number): string => {
   }
   return result;
 };
+
+export const getSeconds = (audio: AudioBuffer | HTMLAudioElement): number => {
+  return Math.floor(audio.duration);
+};

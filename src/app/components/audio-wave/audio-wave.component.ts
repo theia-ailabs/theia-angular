@@ -1,14 +1,12 @@
 import {
   Component,
   OnInit,
-  ViewChild,
-  ElementRef,
   AfterViewInit,
   ChangeDetectorRef,
 } from '@angular/core';
 import WaveSurfer from 'wavesurfer.js';
-import TimelinePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js';
-import Regions from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
+// import TimelinePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js';
+// import Regions from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
 
 @Component({
   selector: 'app-audio-wave',

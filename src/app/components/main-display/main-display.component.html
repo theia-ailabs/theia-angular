@@ -1,12 +1,17 @@
-<div id="display" class="mt-0 pt-[80.8px] w-full h-screen">
+<div id="display" class="w-full h-screen">
     <div id="nav-bar" class="fixed w-full bg-black"><app-nav-bar />
         </div>
-        <div id="main-display" class="h-screen content bg-black">
-            <div class="w-full h-full lg:w-1/2">
-                <app-chat-area />
+        <div id="main-display" class="
+            bg-black">
+            <div class="w-full h-screen mt-24 lg:w-1/2">
+                <app-ai-body class="h-[999px]
+                    " />
                 </div>
                 <div class="w-full h-full lg:w-1/2 lg:h-auto">
                     <app-message-area />
                     </div>
                 </div>
-            </div>
+                <div>
+                    <app-input-msg />
+                    </div>
+                </div>

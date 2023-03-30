@@ -21,5 +21,5 @@ export interface Message {
 
 export interface AudioMsg {
   message: Message;
-  audio: Buffer;
+  audio: AudioBuffer;
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getSeconds, getDate, getTime } from '../../utils';
+import { audioMS, getDate, getTime } from '../../utils';
 import { Message } from '../../types';
 import { AppService } from '../../app.service';
 
@@ -23,7 +23,7 @@ export class AiBodyComponent {
   ngOnInit(): void {}
 
   toTalk(audio: AudioBuffer | HTMLAudioElement = this.audio) {
-    const miliseconds = getSeconds(audio) * 1000;
+    const ms = audioMS(audio);
     this.talking = true;
     this.listening = false;
     this.sleeping = false;
@@ -36,7 +36,7 @@ export class AiBodyComponent {
     this.appService.addMessage(msg);
     setTimeout(() => {
       this.toListen();
-    }, miliseconds);
+    }, ms);
   }
 
   toListen() {

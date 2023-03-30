@@ -5,8 +5,9 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import WaveSurfer from 'wavesurfer.js';
-// import TimelinePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js';
+import TimelinePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js';
 // import Regions from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
+import { audioMS } from '../../utils';
 
 @Component({
   selector: 'app-audio-wave',
@@ -14,43 +15,54 @@ import WaveSurfer from 'wavesurfer.js';
   styleUrls: ['./audio-wave.component.css'],
 })
 export class AudioWaveComponent implements OnInit, AfterViewInit {
-  wave: WaveSurfer = null;
-  url = '../../assets/sounds/Welcome.mp3';
-  public graph = undefined;
+  public graph;
+  wave: WaveSurfer;
+  audio: HTMLAudioElement;
+  url: string;
   isPlaying: boolean;
-  pause: boolean;
+  ms: number;
 
   constructor(private cdr: ChangeDetectorRef) {
-    this.generateWaveform();
+    this.url = '../../assets/sounds/Welcome.mp3';
+    this.audio = new Audio(this.url);
+    this.ms = audioMS(this.audio);
+    console.log(this.ms);
     this.isPlaying = false;
-    this.pause = false;
+    this.generateWaveform();
+    this.onPlay();
   }
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    Promise.resolve().then(() => this.wave.load(this.url));
+  }
   ngOnInit(): void {}
 
-  onPlay(): void {
+  async onPlay(): Promise<void> {
     this.isPlaying = true;
+    this.wave.play();
     this.cdr.detectChanges();
-    Promise.resolve().then(() => this.wave.load(this.url));
-    this.pause = false;
+    setTimeout(() => {
+      this.onStop();
+    }, this.ms);
   }
 
-  onStopPressed(): void {
-    this.pause = true;
+  onStop(): void {
+    this.isPlaying = false;
     this.wave.stop();
   }
 
-  generateWaveform(): void {
-    this.pause = false;
-    Promise.resolve(null).then(() => {
+  async generateWaveform(): Promise<void> {
+    await Promise.resolve(null).then(() => {
       this.wave = WaveSurfer.create({
         container: '#waveform',
         waveColor: 'violet',
         progressColor: 'purple',
+        height: '30',
+        barGap: '10',
+        barHeight: '20',
         plugins: [
-          // TimelinePlugin.create({
-          //   container: '#wave-timeline',
-          // }),
+          TimelinePlugin.create({
+            container: '#wave-timeline',
+          }),
           // Regions.create({
           //   // regions: [
           //   //   {
@@ -72,12 +84,11 @@ export class AudioWaveComponent implements OnInit, AfterViewInit {
           // }),
         ],
       });
-
-      this.wave.on('ready', () => {
-        // alert("I'm ready");
-        this.pause = false;
-        this.wave.play();
-      });
+      // this.wave.on('ready', () => {
+      //   // alert("I'm ready");
+      //   this.pause = false;
+      //   this.wave.play();
+      // });
     });
   }
 }

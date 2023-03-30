@@ -829,6 +829,18 @@ ul li a p:hover {
     opacity: 92%;
 } */
 
+#wave {
+    height: 10px !important;
+    max-height: 10px !important;
+    color: yellow !important;
+}
+
+.wave {
+    height: 10px !important;
+    max-height: 10px !important;
+    color: yellow !important;
+}
+
 /* Home page */
 .animacion {
     animation: aparecer 1s forwards;

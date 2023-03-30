@@ -1,6 +1,8 @@
 import {
   Component,
   OnInit,
+  ViewChild,
+  ElementRef,
   AfterViewInit,
   ChangeDetectorRef,
 } from '@angular/core';
@@ -15,16 +17,12 @@ import Regions from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
 })
 export class AudioWaveComponent implements OnInit, AfterViewInit {
   wave: WaveSurfer = null;
-  url = '../../assets/sinus.wav';
+  url = '../../assets/sounds/Welcome.mp3';
   public graph = undefined;
 
-  constructor(private cdr: ChangeDetectorRef) { }
-
-  ngAfterViewInit(): void {
-    return;
-  }
-
-  ngOnInit(): void { }
+  constructor(private cdr: ChangeDetectorRef) {}
+  ngAfterViewInit(): void {}
+  ngOnInit(): void {}
 
   onPreviewPressed(): void {
     if (!this.wave) {
@@ -51,20 +49,20 @@ export class AudioWaveComponent implements OnInit, AfterViewInit {
             container: '#wave-timeline',
           }),
           Regions.create({
-            regions: [
-              {
-                start: 1,
-                end: 3,
-                loop: false,
-                color: 'hsla(400, 100%, 30%, 0.5)',
-              },
-              {
-                start: 5,
-                end: 7,
-                loop: false,
-                color: 'hsla(200, 50%, 70%, 0.4)',
-              },
-            ],
+            // regions: [
+            //   {
+            //     start: 1,
+            //     end: 3,
+            //     loop: false,
+            //     color: 'hsla(400, 100%, 30%, 0.5)',
+            //   },
+            //   {
+            //     start: 5,
+            //     end: 7,
+            //     loop: false,
+            //     color: 'hsla(200, 50%, 70%, 0.4)',
+            //   },
+            // ],
             dragSelection: {
               slop: 5,
             },

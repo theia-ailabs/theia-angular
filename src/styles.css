@@ -822,12 +822,12 @@ ul li a p:hover {
     opacity: 92%;
 }
 
-button:hover {
+/* button:hover {
     background: linear-gradient(var(--primary-color),
             var(--secondary-color));
     color: white;
     opacity: 92%;
-}
+} */
 
 /* Home page */
 .animacion {

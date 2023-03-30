@@ -1,4 +1,5 @@
-<div class="z-20 relative p-2 pt-4 h-screen w-screen opacity-100">
+<button (click)="scrollTop()" class="z-20 relative p-2 pt-4 h-screen w-screen
+    opacity-100">
     <div class="" *ngFor="let x of messages" key="x.datetime">
         <div *ngIf="x.author==='Theia'" class="flex justify-start w-full
             -mb-4">
@@ -55,7 +56,7 @@
                 </div>
             </div>
 
-        </div>
+        </button>
         <div class="flex z-50 relative justify-center w-full">
             <input type="text" autofocus (keyup.enter)="inputMessage()"
                 [(ngModel)]="userMessage"

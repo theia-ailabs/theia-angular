@@ -26,6 +26,10 @@ export class MessageAreaComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  scrollTop(): void {
+    window.scrollTo(document.body.scrollHeight, 0);
+  }
+
   inputMessage(): void {
     const msg: Message = {
       author: 'User',

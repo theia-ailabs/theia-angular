@@ -34,7 +34,7 @@ export class MessageAreaComponent implements OnInit {
     };
     this.appService.addMessage(msg);
     this.userMessage = '';
-    window.scrollTo(0, 9999);
+    window.scrollTo(document.body.scrollHeight, window.screen.availHeight - 80);
     setTimeout(() => {
       const theia: Message = {
         author: 'Theia',
@@ -43,6 +43,5 @@ export class MessageAreaComponent implements OnInit {
       };
       this.appService.addMessage(theia);
     }, 2000);
-    window.scrollTo(0, 9999);
   }
 }

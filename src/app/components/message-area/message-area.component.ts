@@ -39,7 +39,8 @@ export class MessageAreaComponent implements OnInit {
     setTimeout(() => {
       const theia: Message = {
         author: 'Theia',
-        message: 'Hello, Im Theia your AI assistant',
+        message:
+          'Hello, Im Theia your AI assistant. Im here to help you in anything you need. Im a advance trained NLP model with also access to google, wikipedia, youtube, spotify, gmail, calendar, and much more. I can make your life easier. How can I help you?',
         datetime: getDate() + ' ' + getTime(),
       };
       this.appService.addMessage(theia);

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   button = document.getElementById('connect-btn');
 
   constructor() {
-    this.connected = false;
+    this.connected = true;
   }
 
   connect() {

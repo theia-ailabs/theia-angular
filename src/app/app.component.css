@@ -1,6 +1,6 @@
 #connect-btn {
     z-index: 9999 !important;
-    position: relative !important;
+    position: absolute !important;
     top: 45vh;
     left: calc(50% - 39.9px);
 }

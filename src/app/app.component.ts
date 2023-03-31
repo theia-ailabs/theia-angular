@@ -7,7 +7,15 @@ import services from './services';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  connected: boolean;
+
+  constructor() {
+    this.connected = false;
+  }
+
+  connect() {
+    this.connected = true;
+  }
 
   async ngOnInit(): Promise<void> {
     // await services.askRecord();

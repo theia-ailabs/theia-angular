@@ -29,6 +29,7 @@ import { AppService } from './app.service';
 import { AudioWaveComponent } from './components/audio-wave/audio-wave.component';
 import { SleeperScreenComponent } from './components/sleeper-screen/sleeper-screen.component';
 import { InputMsgComponent } from './components/input-msg/input-msg.component';
+import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { InputMsgComponent } from './components/input-msg/input-msg.component';
     AudioWaveComponent,
     SleeperScreenComponent,
     InputMsgComponent,
+    WelcomeScreenComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ html {
 
 /* Media Queries */
 @media screen and (max-width: 1024px) {
-    .canvas-container {
+    canvas-container {
         position: absolute;
         left: 0 !important;
         z-index: 995 !important;
@@ -270,7 +270,7 @@ html {
 }
 
 @font-face {
-    font-family: 'Cubics';
+    font-family: 'Cubic';
     src: url(./assets/fonts/cubic.ttf);
 }
 
@@ -325,12 +325,6 @@ app-loader {
 .loader-head {
     position: relative;
     top: -30%;
-}
-
-.loader-group {
-    position: relative;
-    margin: 5% auto;
-    z-index: 6000;
 }
 
 .loader {
@@ -441,9 +435,9 @@ app-loader {
     text-align: center;
     padding: 0;
 }
-
+/* 
 .supertitle {
-    font-family: "Cubic", sans-serif;
+    font-family: "Cubic";
     font-size: 2.5rem;
     margin: 0;
     padding-bottom: 0.5rem;
@@ -454,7 +448,7 @@ app-loader {
 }
 
 h1 {
-    font-family: "Cubic", sans-serif;
+    font-family: "Cubic", sans-serif !important;
     font-size: 2.5rem;
     margin: 0;
     padding-bottom: 0.5rem;
@@ -566,15 +560,8 @@ h1.span {
 
 .loader span:nth-child(22) {
     animation-delay: 2.1s;
-}
+} */
 
-#word {
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5000;
-}
 
 .workspace {
     position: relative !important;

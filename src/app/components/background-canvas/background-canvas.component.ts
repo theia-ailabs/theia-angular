@@ -5,11 +5,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 @Component({
   selector: 'app-background-canvas',
   templateUrl: './background-canvas.component.html',
-  styleUrls: ['./background-canvas.component.css']
+  styleUrls: ['./background-canvas.component.css'],
 })
 export class BackgroundCanvasComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     //Empieza a contar
@@ -28,7 +27,7 @@ export class BackgroundCanvasComponent implements OnInit {
           `#include <color_vertex>
           float d = length(abs(position) / vec3(40., 10., 40));
           d = clamp(d, 0., 1.);
-          vColor = mix(vec3(100., 50., 255.), vec3(227., 155., 0.), d) / 255.;
+          vColor = mix(vec3(120., 200., 155.), vec3(227., 155., 0.), d) / 255.;
         `
         )
         .replace(
@@ -59,13 +58,18 @@ export class BackgroundCanvasComponent implements OnInit {
       //console.log(shader.fragmentShader);
     };
     let scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x160016);
-    let camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 1, 1000);
+    scene.background = new THREE.Color(0x000);
+    let camera = new THREE.PerspectiveCamera(
+      60,
+      innerWidth / innerHeight,
+      1,
+      1000
+    );
     camera.position.set(-20, 0, 40);
     let renderer = new THREE.WebGLRenderer();
     renderer.setSize(innerWidth, innerHeight);
-    document.getElementById('word').appendChild(renderer.domElement);
-    window.addEventListener("resize", (event) => {
+    document.getElementById('world').appendChild(renderer.domElement);
+    window.addEventListener('resize', (event) => {
       camera.aspect = innerWidth / innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight);
@@ -76,7 +80,7 @@ export class BackgroundCanvasComponent implements OnInit {
     controls.enablePan = false;
 
     let gu = {
-      time: { value: 0 }
+      time: { value: 0 },
     };
 
     let sizes = [];
@@ -113,8 +117,8 @@ export class BackgroundCanvasComponent implements OnInit {
     }
 
     let g = new THREE.BufferGeometry().setFromPoints(pts);
-    g.setAttribute("sizes", new THREE.Float32BufferAttribute(sizes, 1));
-    g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4));
+    g.setAttribute('sizes', new THREE.Float32BufferAttribute(sizes, 1));
+    g.setAttribute('shift', new THREE.Float32BufferAttribute(shift, 4));
     let m = new THREE.PointsMaterial({
       size: 0.125,
       transparent: true,
@@ -123,7 +127,7 @@ export class BackgroundCanvasComponent implements OnInit {
     });
     m.onBeforeCompile = onBeforeCompile;
     let p = new THREE.Points(g, m);
-    p.rotation.order = "ZYX";
+    p.rotation.order = 'ZYX';
     p.rotation.z = 0.2;
     scene.add(p);
 
@@ -136,6 +140,5 @@ export class BackgroundCanvasComponent implements OnInit {
       p.rotation.y = t * 0.05;
       renderer.render(scene, camera);
     });
-
   }
 }

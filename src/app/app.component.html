@@ -1,3 +1,6 @@
-<app-loader id="myLoader" class="h-screen overflow-hidden" />
+<div class="relative z-50">
+  <button class="fixed left-1/2 top-1/2 bg-red-500 ">Connect</button>
+</div>
+<app-welcome-screen *ngIf="!connected" />
   <!--<app-sleeper-screen id="sleeper" class="bg-transparent hidden" />-->
-  <app-main-display />
+  <app-main-display *ngIf="connected" />

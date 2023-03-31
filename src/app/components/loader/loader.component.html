@@ -1,9 +1,12 @@
-<div class="loader-group w-full h-screen overflow-hidden" [@fadeAnimation]="loader">
-    <audio id='myAudio' src='./../../../assets/sounds/Welcome.mp3' type='audio/mp3' autoplay></audio>
+<div class="loader-group w-full h-screen overflow-hidden"
+    [@fadeAnimation]="loader">
+    <audio id='myAudio' src='./../../../assets/sounds/Welcome.mp3'
+        type='audio/mp3' autoplay></audio>
     <section class="text-center flex flex-wrap justify-center">
         <div class="loader-head w-full text-center">
             <h1 class="w-full">
-                <div class="loader w-72 w-max-96 m-auto flex flex-wrap justify-center">
+                <div class="loader w-72 w-max-96 m-auto flex flex-wrap
+                    justify-center">
                     <div [ngClass]="{'hidden': lang != 'en'}">
                         <div class="text-lg my-4">
                             <span class="m">W</span>
@@ -18,7 +21,7 @@
                             <span class="m">O</span>
                         </div>
                     </div>
-                    <div  [ngClass]="{'hidden': lang != 'es'}" >
+                    <div [ngClass]="{'hidden': lang != 'es'}">
                         <div class="text-lg my-4">
                             <span class="m">B</span>
                             <span class="m">I</span>
@@ -52,8 +55,12 @@
                         </div>
                     </div>
                     <button id="connect-btn" (click)="connect()"
-                        class="animate-bounce connect-btn mt-6 hidden border bg-yellow-500/90 hover:bg-yellow-500 hover:shadow-sm shadow-yellow-400 border-gray-300 text-sm p-2 px-4 uppercase rounded-xl">
-                        <h1 class="text-[8px] pl-2 hover:text-white hover:font-bold hover:translate-x-2">
+                        class="animate-bounce connect-btn mt-6 hidden border
+                        bg-yellow-500/90 hover:bg-yellow-500 hover:shadow-sm
+                        shadow-yellow-400 border-gray-300 text-sm p-2 px-4
+                        uppercase rounded-xl">
+                        <h1 class="text-[8px] pl-2 hover:text-white
+                            hover:font-bold hover:translate-x-2">
                             Connect
                         </h1>
                     </button>
@@ -61,10 +68,10 @@
             </div>
             <div class="mt-96 xl:mt-80">
                 <app-text-loader class="w-full" />
+                </div>
             </div>
-        </div>
-    </section>
-</div>
-<app-background-canvas id="myBackground" class="overflow-hidden" />
-<!-- stats - count particles -->
-<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+        </section>
+    </div>
+    <app-background-canvas id="myBackground" class="overflow-hidden" />
+        <!-- stats - count particles -->
+        <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->

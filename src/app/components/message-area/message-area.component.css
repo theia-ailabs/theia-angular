@@ -1,8 +1,8 @@
-input:active {
+span:active {
   outline: none !important;
-  border: none !important;
+  border: rgb(249, 17, 249)rple !important;
 }
-input:focus {
+span:focus {
   outline: none !important;
   border: none !important;
 }

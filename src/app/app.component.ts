@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.loading();
     }, 12000);
-
   }
 
   public loading(): void {

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   button = document.getElementById('connect-btn');
 
   constructor() {
-    this.connected = true;
+    this.connected = false;
   }
 
   connect() {
@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.loading();
     }, 12000);
-
   }
 
   public loading(): void {

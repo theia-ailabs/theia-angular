@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DivsService } from './injection';
 import { AppService } from '../../app.service';
 
 @Component({
@@ -11,7 +10,7 @@ export class NavBarComponent {
   appService: AppService;
   username: string;
 
-  constructor(private divsService: DivsService) {
+  constructor() {
     this.appService = new AppService();
     this.username = this.appService.username;
   }

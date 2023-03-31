@@ -310,6 +310,11 @@ html {
     background-color: black !important;
 }
 
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 /* LOADER */
 app-loader {
     background-color: #000;

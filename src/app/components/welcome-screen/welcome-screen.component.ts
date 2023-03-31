@@ -42,19 +42,5 @@ export class WelcomeScreenComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    setTimeout(() => {
-      this.loading();
-    }, 12000);
-  }
-
-  public connect(): void {
-    document.getElementById('myLoader').classList.add('hidden');
-    document.getElementById('myBackground').classList.add('hidden');
-    document.getElementById('display').classList.remove('hidden');
-  }
-
-  public loading(): void {
-    document.getElementById('circle').classList.add('hidden');
-    document.getElementById('connect-btn').classList.remove('hidden');
   }
 }

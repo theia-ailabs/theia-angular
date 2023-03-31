@@ -1,15 +1,14 @@
 <div id="display" class="w-full h-screen">
-    <div id="nav-bar" class="fixed w-full bg-black"><app-nav-bar />
-        </div>
-        <div id="main-display" class="
+    <app-nav-bar class="z-50 fixed w-full bg-black" />
+    <div id="main-display" class="
             bg-black">
-            <div class="z-0 w-full h-screen mt-24">
-                <app-ai-body class="h-screen
+        <div class="z-0 w-full h-screen mt-24">
+            <app-ai-body class="h-screen
                     " />
-                </div>
-                <div class="w-full h-screen">
-                    <app-message-area />
-                    </div>
-                </div>
+        </div>
+        <div class="w-full h-screen">
+            <app-message-area />
+        </div>
+    </div>
 
-            </div>
+</div>

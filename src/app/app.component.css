@@ -1,0 +1,6 @@
+#loading-btn {
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+}

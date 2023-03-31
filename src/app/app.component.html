@@ -1,6 +1,21 @@
 <!-- <div class="relative z-50">
   <button class="fixed left-1/2 top-1/2 bg-red-500 ">Connect</button>
 </div> -->
-<app-welcome-screen *ngIf="!connected" />
-  <!--<app-sleeper-screen id="sleeper" class="bg-transparent hidden" />-->
-  <app-main-display *ngIf="connected" />
+<div *ngIf="!connected">
+  <!-- Connect Btn -->
+  <div id="loading-btn" class="h-full w-full">
+    <button id="connect-btn" (click)="connect()" class="animate-bounce connect-btn mt-6 hidden border
+    bg-yellow-500/90 hover:bg-yellow-500 hover:shadow-sm
+    shadow-yellow-400 border-gray-300 text-sm p-2 px-4
+    uppercase rounded-xl">
+      <h1 class="text-[8px] pl-2 hover:text-white
+      hover:font-bold hover:translate-x-2">
+        Connect
+      </h1>
+    </button>
+  </div>
+  <app-welcome-screen />
+</div>
+
+<!--<app-sleeper-screen id="sleeper" class="bg-transparent hidden" />-->
+<app-main-display *ngIf="connected" />

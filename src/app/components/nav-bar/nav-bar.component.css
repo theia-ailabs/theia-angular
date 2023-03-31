@@ -5,13 +5,6 @@
   z-index: 9999;
 }
 
-#nav-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
 .logo {
   font-weight: normal;
   font-family: 'Cubics', cursive;

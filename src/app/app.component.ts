@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import services from './services';
+import { disableCursor } from '@fullcalendar/core/internal';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import services from './services';
 })
 export class AppComponent implements OnInit {
   connected: boolean;
+  button = document.getElementById('connect-btn');
 
   constructor() {
     this.connected = false;
@@ -17,8 +19,15 @@ export class AppComponent implements OnInit {
     this.connected = true;
   }
 
-  async ngOnInit(): Promise<void> {
-    // await services.askRecord();
-    // await services.askTheia('hello');
+  ngOnInit() {
+    setTimeout(() => {
+      this.loading();
+    }, 12000);
+
+  }
+
+  public loading(): void {
+    document.getElementById('loader-ai').classList.add('hidden');
+    document.getElementById('connect-btn').classList.remove('hidden');
   }
 }

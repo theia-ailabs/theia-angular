@@ -1,6 +1,6 @@
-#loading-btn {
+#connect-btn {
     z-index: 9999 !important;
-    position: fixed !important;
-    top: 50%;
-    left: 50%;
+    position: relative !important;
+    top: 45gvh;
+    left: calc(50% - 39.9px);
 }

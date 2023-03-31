@@ -1,7 +1,5 @@
-<!-- <div class="relative z-50">
-  <button class="fixed left-1/2 top-1/2 bg-red-500 ">Connect</button>
-</div> -->
-<div *ngIf="!connected" class="w-screen h-screen">
+<div *ngIf="!connected" class="absolute w-screen h-screen
+  max-h-screen">
   <!-- Connect Btn -->
   <button id="connect-btn" (click)="connect()" class="align-middle
     animate-bounce connect-btn mt-6 hidden border

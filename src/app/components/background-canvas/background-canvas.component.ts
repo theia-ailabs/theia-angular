@@ -26,7 +26,7 @@ export class BackgroundCanvasComponent implements OnInit {
           `#include <color_vertex>
           float d = length(abs(position) / vec3(40., 10., 40));
           d = clamp(d, 0., 1.);
-          vColor = mix(vec3(227., 200., 0.), vec3(100., 50., 0.), d) / 255.;
+          vColor = mix(vec3(174., 15., 247.), vec3(227., 200., 0.), d) / 255.;
         `
         )
         .replace(

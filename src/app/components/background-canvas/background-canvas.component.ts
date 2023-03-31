@@ -134,7 +134,7 @@ export class BackgroundCanvasComponent implements OnInit {
 
     renderer.setAnimationLoop(() => {
       controls.update();
-      let t = clock.getElapsedTime() * 0.5;
+      let t = clock.getElapsedTime() * 1;
       gu.time.value = t * Math.PI;
       p.rotation.y = t * 0.05;
       renderer.render(scene, camera);

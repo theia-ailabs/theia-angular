@@ -338,11 +338,6 @@ app-loader {
     height: 20%;
 }
 
-.connect-btn {
-    z-index: 9999 !important;
-    height: 38px !important;
-}
-
 .connect-btn:hover {
     background-color: transparent !important;
     background: transparent !important;

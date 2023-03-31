@@ -1,36 +1,38 @@
 <!-- 3D Model Background -->
 <app-background-canvas class="overflow-hidden" />
   <!-- Welcome Title -->
-  <h1 class="welcome-title pt-20 text-center flex flex-wrap
-    justify-center">
-    <div class="fx w-72 w-max-96 m-auto flex flex-wrap
+  <div class="mt-20">
+    <h1 class="welcome-title w-full text-center flex flex-wrap
       justify-center">
-      <div class="text-5xl my-4">
-        <span class="silver">T</span>
-        <span class="silver">H</span>
-        <span class="silver">E</span>
-        <span>I</span>
-        <span>A</span>
+      <div class="fx text-center flex flex-wrap
+        justify-center">
+        <div class="text-center">
+          <span class="silver">T</span>
+          <span class="silver">H</span>
+          <span class="silver">E</span>
+          <span>I</span>
+          <span>A</span>
+        </div>
       </div>
-    </div>
-  </h1>
-  <!-- Connect Btn & Loader -->
-  <div class="vertical-centered-box ">
-    <div id="circle" class="loader-line-mask">
-      <div class="content-box">
-        <div class="loader-line"></div>
-        <div class="loader-circle"></div>
-      </div>
-    </div>
-    <button id="connect-btn" (click)="connect()"
-      class="animate-bounce connect-btn mt-6 hidden border
-      bg-yellow-500/90 hover:bg-yellow-500 hover:shadow-sm
-      shadow-yellow-400 border-gray-300 text-sm p-2 px-4
-      uppercase rounded-xl">
-      <h1 class="text-[8px] pl-2 hover:text-white
-        hover:font-bold hover:translate-x-2">
-        Connect
-      </h1>
-    </button>
+    </h1>
   </div>
+  <!-- Loader -->
+  <div class="front">
+    <div class="loader-ai">
+      <img class="rounded-full opacity-10" width="280"
+        src="../../assets/gif/loader.gif" />
+    </div>
+  </div>
+  <!-- Connect Btn -->
+  <button id="connect-btn" (click)="connect()"
+    class="animate-bounce connect-btn mt-6 hidden border
+    bg-yellow-500/90 hover:bg-yellow-500 hover:shadow-sm
+    shadow-yellow-400 border-gray-300 text-sm p-2 px-4
+    uppercase rounded-xl">
+    <h1 class="text-[8px] pl-2 hover:text-white
+      hover:font-bold hover:translate-x-2">
+      Connect
+    </h1>
+  </button>
+
   <!-- Console logs -->

@@ -1,7 +1,9 @@
 #world {
-    background: transparent;
+    background: transparent !important;
+    background-color: transparent !important;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5000;
+    bottom: 0;
+    right: 0;
 }

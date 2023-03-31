@@ -5,6 +5,23 @@
   top: 20% !important;
 }
 
+.loader-ai {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.front {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+.connect-btn {
+  z-index: 9999 !important;
+  height: 38px !important;
+}
+
 h1 {
   font-family: "Cubic" !important;
   src: url(../../../assets/fonts/cubic.ttf) !important;

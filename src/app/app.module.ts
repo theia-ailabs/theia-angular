@@ -31,6 +31,7 @@ import { SleeperScreenComponent } from './components/sleeper-screen/sleeper-scre
 import { InputMsgComponent } from './components/input-msg/input-msg.component';
 import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
 import { SvgSpacetravelComponent } from './components/svg-spacetravel/svg-spacetravel.component';
+import { RealstateBackComponent } from './components/realstate-back/realstate-back.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { SvgSpacetravelComponent } from './components/svg-spacetravel/svg-spacet
     InputMsgComponent,
     WelcomeScreenComponent,
     SvgSpacetravelComponent,
+    RealstateBackComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,7 @@ import { AudioWaveComponent } from './components/audio-wave/audio-wave.component
 import { SleeperScreenComponent } from './components/sleeper-screen/sleeper-screen.component';
 import { InputMsgComponent } from './components/input-msg/input-msg.component';
 import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
+import { SvgSpacetravelComponent } from './components/svg-spacetravel/svg-spacetravel.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { WelcomeScreenComponent } from './components/welcome-screen/welcome-scre
     SleeperScreenComponent,
     InputMsgComponent,
     WelcomeScreenComponent,
+    SvgSpacetravelComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,4 +84,4 @@ import { WelcomeScreenComponent } from './components/welcome-screen/welcome-scre
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

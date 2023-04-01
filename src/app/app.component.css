@@ -6,7 +6,7 @@
 }
 
 @property --d {
-    syntax: '<angle>';
+    syntax: "<angle>";
     inherits: true;
     initial-value: 0deg;
 }

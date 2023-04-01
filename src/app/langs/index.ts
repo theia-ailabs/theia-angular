@@ -2,7 +2,7 @@ export const langs = {
   en: {
     welcome: 'Welcome to Theia',
     navbar: 'Welcome, ',
-    input: ' 🗣️ Ask me anything and press CTRL+ENTER',
+    input: ' 🗣️ Ask me anything',
     loader_logs: [
       'Detecting your local language...',
       'Idioma detectado: EN (United Kingdom)',
@@ -14,7 +14,7 @@ export const langs = {
   es: {
     welcome: 'Bienvenido a Theia',
     navbar: 'Bienvenido, ',
-    input: ' 🗣️ Pregúntame cualquier cosa y presiona CTRL+ENTER',
+    input: ' 🗣️ Pregúntame cualquier cosa',
     loader_logs: [
       'Detectando tu idioma local...',
       'Idioma detectado: ES (España)',

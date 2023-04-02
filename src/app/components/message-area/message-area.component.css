@@ -2,7 +2,17 @@ span:active {
   outline: none !important;
   border: rgb(249, 17, 249)rple !important;
 }
+
 span:focus {
   outline: none !important;
   border: none !important;
+}
+
+.send {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  top: 8.7rem;
+  left: 30.4rem;
 }

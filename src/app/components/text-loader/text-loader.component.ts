@@ -19,3 +19,4 @@ export class TextLoaderComponent implements OnInit {
     }, 3000);
   }
 }
+

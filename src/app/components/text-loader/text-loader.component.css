@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
     text-align: center !important;
     z-index: 9999 !important;
     width: 100%;
@@ -14,4 +13,9 @@
     font-size: small;
     box-shadow: none !important;
     border: none !important;
+}
+
+app-svg-spacetravel {
+    width: 300px !important;
+    height: 200px !important;
 }

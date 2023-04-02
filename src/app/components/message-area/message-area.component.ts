@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AppService } from '../../app.service';
 import { getDate, getTime } from '../../utils';
 import { Message } from '../../types';
@@ -15,6 +15,7 @@ export class MessageAreaComponent implements OnInit {
   placeholder: string;
   userMessage: string;
   messages: Message[];
+  send: boolean;
 
   constructor(public service: AppService) {
     this.appService = new AppService();
@@ -22,9 +23,39 @@ export class MessageAreaComponent implements OnInit {
     this.placeholder = this.appService.langs[String(this.lang)].input;
     this.userMessage = '';
     this.messages = this.appService.messages;
+    this.send = false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    document.getElementById('span_input').innerHTML = this.placeholder;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (document.getElementById('span_input').textContent == this.placeholder) {
+      document.getElementById('span_input').textContent = '';
+    }
+    this.userMessage = document.getElementById('span_input').textContent;
+    if (event.key === 'Enter') {
+      if (this.send) {
+        console.log(this.userMessage);
+        this.inputMessage();
+      }
+      this.send = false;
+      return;
+    }
+    if (
+      event.key === 'Control' ||
+      event.key === 'Shift' ||
+      event.key === 'Alt' ||
+      event.key === 'Meta'
+    ) {
+      this.send = true;
+      return;
+    } else {
+      this.send = false;
+    }
+  }
 
   inputMessage(): void {
     if (!this.userMessage) return;
@@ -35,7 +66,11 @@ export class MessageAreaComponent implements OnInit {
     };
     this.appService.addMessage(msg);
     this.userMessage = '';
-    window.scrollTo(document.body.scrollHeight, window.screen.availHeight - 80);
+    document.getElementById('span_input').textContent = this.placeholder;
+    window.scrollTo(
+      document.body.scrollHeight,
+      window.screen.availHeight - 120
+    );
     setTimeout(() => {
       const theia: Message = {
         author: 'Theia',

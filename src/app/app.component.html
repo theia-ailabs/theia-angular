@@ -11,6 +11,6 @@
   </button>
   <app-welcome-screen #welcomeScreen />
   </div>
-  <app-realstate-back />
+  <app-main-display *ngIf="connected" />
+    <!-- <app-realstate-back /> -->
     <!--<app-sleeper-screen id="sleeper" class="bg-transparent hidden" />-->
-    <!-- <app-main-display *ngIf="connected" /> -->

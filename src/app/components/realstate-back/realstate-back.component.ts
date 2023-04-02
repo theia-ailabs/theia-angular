@@ -201,7 +201,7 @@ export class RealstateBackComponent {
     function dots() {
       sampler = new MeshSurfaceSampler(skull).build();
 
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 8; i++) {
         const linesMaterial = new THREE.LineBasicMaterial({
           color: colors[i % 4],
           transparent: false,
@@ -219,7 +219,7 @@ export class RealstateBackComponent {
     let skull = null;
     const loader = new OBJLoader();
     loader.load(
-      "../../assets/models/10.obj",
+      "../../assets/models/skull_model.obj",
       (obj) => {
         skull = obj.children[0];
         dots();

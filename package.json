@@ -1,5 +1,5 @@
 {
-  "name": "theia-client",
+  "name": "theia-angular",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
